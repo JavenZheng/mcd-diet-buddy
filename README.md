@@ -158,6 +158,8 @@ mcd-diet-buddy/
 - **[SKILL.md](SKILL.md)** —— WorkBuddy Skill 定义（name / description / 工作流）
 - **[workbuddy.md](workbuddy.md)** —— 参赛公开提交文档
 - **[CONTEST_DECLARATION.md](CONTEST_DECLARATION.md)** —— 参赛声明（来源：官方仓库原样复制）
+- **[docs/使用说明.md](docs/使用说明.md)** —— 30 秒上手 + 三个功能逐个讲 + 数据严谨性（参赛提交嘅「使用说明」材料）
+- **[docs/录屏脚本.md](docs/录屏脚本.md)** —— 3 分钟演示录屏分镜与旁白（评分「展示」项用）
 - **[docs/step2_report.md](docs/step2_report.md)** —— 2026-10-24 MCP 真实调用报告
 
 ---
