@@ -4,6 +4,7 @@
 
 **在线体验（点开即用，唔使装嘢）：https://javenzheng.github.io/mcd-diet-buddy/**
 仓库：https://github.com/JavenZheng/mcd-diet-buddy
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## 定位
 减脂期想食麦当劳，唔使戒口，换一种吃法就得。
@@ -87,6 +88,9 @@ mcd-diet-buddy/
 ├── workbuddy.md              # 公开提交文档
 └── .gitignore
 ```
+
+## 开源许可
+代码部分以 **MIT** 开源（见 `LICENSE`）。营养数据与餐品信息版权归麦当劳官方所有，本项目仅作引用。
 
 ## 免责声明
 营养数据来自麦当劳官方 MCP，仅供参考，实际以门店为准；减脂与钠摄入请遵医嘱；本项目为参赛作品，与麦当劳官方无隶属关系。
