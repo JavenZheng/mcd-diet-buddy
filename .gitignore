@@ -29,6 +29,7 @@ tmp/
 
 # ===== 参赛提交专用（唔发布到 GitHub，只随参赛表单上传） =====
 workbuddy.md
+assets/
 
 # ===== GitHub Pages 构建产物（Actions 自动生成） =====
 _site/
