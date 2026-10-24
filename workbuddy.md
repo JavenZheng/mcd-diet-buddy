@@ -127,8 +127,12 @@ mcd-diet-buddy/
 │   ├── parse_nutrition.py         # 营养文本 → JSON
 │   └── build_site.py              # 生成单文件网页
 ├── docs/step2_report.md           # MCP 真实调用报告
+├── CONTEST_DECLARATION.md         # 参赛声明（官方原文原样复制，一字未改）
+├── MCP_INTEGRATION.md             # MCP 集成说明（用了边啲 Tool / 调用流程 / 业务价值）
+├── SKILL.md                       # WorkBuddy Skill 定义（同 skill/SKILL.md 一致）
 ├── workbuddy.md                   # 本文件（公开提交）
-├── README.md
+├── README.md                      # 项目介绍 / 打开方式 / 使用示例 / 数据快照刷新
+├── LICENSE                        # MIT
 └── .gitignore                     # 排除 .env / *token* / config.local.*
 ```
 
@@ -136,4 +140,6 @@ mcd-diet-buddy/
 营养数据来自麦当劳官方 MCP，仅供参考，实际以门店为准；减脂与钠摄入请遵医嘱；本项目为参赛作品，与麦当劳官方无隶属关系。
 
 ## 参赛声明
+
+已按要求从官方仓库 `M-China/mcd-developer-innovation-challenge` **原样复制**到 [`CONTEST_DECLARATION.md`](CONTEST_DECLARATION.md)，**一字未改**（sha256 与官方返回字节完全一致）。
 本项目为麦当劳程序员创意开发大赛参赛作品，全程仅使用麦当劳官方 MCP 提供的公开能力，未向用户索取 token、未存储或使用任何用户 token。
