@@ -3,6 +3,9 @@
 > 参赛作品 · 麦当劳程序员创意开发大赛（同步参加 WaytoAGI 1024 用餐赛道）
 > 基于麦当劳官方 MCP 能力开发的 Skill + 单文件体验网页（挂 GitHub Pages，点开即用）。
 
+**在线体验（评委点开即用，唔使装嘢）：https://javenzheng.github.io/mcd-diet-buddy/**
+**源码仓库：https://github.com/JavenZheng/mcd-diet-buddy**
+
 ## 广告语（对外文案与网页首屏原文照用）
 麦当劳减肥拍档正式上线啦！只需要使用「麦当劳减肥拍档」，帮你规划好怎么样吃麦当劳能够符合减肥期间的要求，换一种吃法，就可以食得有营养又健康，快D来试下啦！
 
