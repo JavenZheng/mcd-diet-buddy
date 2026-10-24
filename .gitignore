@@ -1,0 +1,31 @@
+# ===== 密钥 / 凭证（严禁提交） =====
+.env
+*.env
+*.env.*
+*token*
+*Token*
+*TOKEN*
+config.local.*
+config.local.*
+
+# ===== Python =====
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ===== 系统 / 编辑器 =====
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ===== 本地临时 =====
+*.log
+tmp/
+
+# ===== 编辑器会话数据（非交付物） =====
+.workbuddy/
+
+# ===== GitHub Pages 构建产物（Actions 自动生成） =====
+_site/

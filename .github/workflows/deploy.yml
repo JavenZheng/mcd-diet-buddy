@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+# 推送到 main 就自动构建并部署单文件网页到 GitHub Pages。
+# 构建只跑 scripts/build_site.py（纯标准库 + 仓库内 data/*.json），
+# 唔需要任何 token、唔连后端，官方数据已经落盘喺 data/ 度。
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build single-file site
+        run: python scripts/build_site.py
+
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _site
+          cp web/index.html _site/index.html
+          # GitHub Pages 默认行 Jekyll；单文件静态页唔需要，加 .nojekyll 避免被改
+          touch _site/.nojekyll
+          # 有自定义域名先会copy CNAME；冇就唔好建呢个文件（否则会抢咗 github.io 链接）
+          if [ -f CNAME ]; then cp CNAME _site/CNAME; fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

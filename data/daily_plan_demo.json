@@ -1,0 +1,2388 @@
+{
+  "engine": "daily_plan",
+  "sodium_cap": 2000,
+  "banned_rule": "派/大薯条/麦旋风/含糖饮料（无糖可乐·玉米杯保留）",
+  "runs": [
+    {
+      "budget": 1200,
+      "goal": "均衡",
+      "avoid_snacks": true,
+      "pro_floor": 48,
+      "sodium_cap": 2000,
+      "meals": [
+        {
+          "meal": "早餐",
+          "key": "breakfast",
+          "main": "烟肉蛋麦满分",
+          "main_kcal": 260,
+          "main_pro": 16,
+          "side": "大杯玉米杯",
+          "side_kcal": 87,
+          "side_pro": 4,
+          "drink": "冰美式小杯",
+          "drink_kcal": 10,
+          "drink_pro": 1,
+          "kcal": 357,
+          "protein": 21,
+          "sodium": 485,
+          "fat": 11,
+          "lower": 250,
+          "upper": 403,
+          "used_breakfast_pool": true,
+          "transform": {
+            "main": "烟肉蛋麦满分",
+            "side": "大杯玉米杯",
+            "drink": "冰美式小杯",
+            "default_kcal": 357,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "烟肉蛋麦满分原食法",
+                "after": "烟肉蛋麦满分经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "大杯玉米杯换苹果片，慳 55 卡",
+                "before": "大杯玉米杯 87kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 55,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)、小杯玉米杯(53kcal)",
+              "冰美式小杯系黑咖啡／茶／水，零负担，唔使换",
+              "烟肉蛋麦满分唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 55,
+              "after_ab": 302,
+              "ab_pct": 15.4,
+              "exp_mid": 105.0,
+              "after_all": 197.0,
+              "all_pct": 44.8
+            }
+          }
+        },
+        {
+          "meal": "午餐",
+          "key": "lunch",
+          "main": "原味板烧鸡腿炒双蛋堡",
+          "main_kcal": 419,
+          "main_pro": 27,
+          "side": "苹果片",
+          "side_kcal": 32,
+          "side_pro": 0,
+          "drink": "冰奶铁小杯",
+          "drink_kcal": 86,
+          "drink_pro": 5,
+          "kcal": 537,
+          "protein": 32,
+          "sodium": 759,
+          "fat": 25,
+          "lower": 350,
+          "upper": 547,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "原味板烧鸡腿炒双蛋堡",
+            "side": "苹果片",
+            "drink": "冰奶铁小杯",
+            "default_kcal": 537,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "去鸡皮／沥油食法，估算慳 30-60 卡",
+                "before": "原味板烧鸡腿炒双蛋堡原食法",
+                "after": "原味板烧鸡腿炒双蛋堡经验改造",
+                "kcal_diff": [
+                  30,
+                  60
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "炸鸡经验去鸡皮降脂"
+              }
+            ],
+            "notes": [
+              "冰奶铁小杯系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "原味板烧鸡腿炒双蛋堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 0,
+              "after_ab": 537,
+              "ab_pct": 0.0,
+              "exp_mid": 45.0,
+              "after_all": 492.0,
+              "all_pct": 8.4
+            }
+          }
+        },
+        {
+          "meal": "晚餐",
+          "key": "dinner",
+          "main": "原味板烧鸡腿麦满分",
+          "main_kcal": 246,
+          "main_pro": 15,
+          "side": "小杯玉米杯",
+          "side_kcal": 53,
+          "side_pro": 2,
+          "drink": "锡兰红茶",
+          "drink_kcal": 2,
+          "drink_pro": 0,
+          "kcal": 301,
+          "protein": 17,
+          "sodium": 612,
+          "fat": 10,
+          "lower": 300,
+          "upper": 490,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "原味板烧鸡腿麦满分",
+            "side": "小杯玉米杯",
+            "drink": "锡兰红茶",
+            "default_kcal": 301,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "去鸡皮／沥油食法，估算慳 30-60 卡",
+                "before": "原味板烧鸡腿麦满分原食法",
+                "after": "原味板烧鸡腿麦满分经验改造",
+                "kcal_diff": [
+                  30,
+                  60
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "炸鸡经验去鸡皮降脂"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "小杯玉米杯换苹果片，慳 21 卡",
+                "before": "小杯玉米杯 53kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 21,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)",
+              "锡兰红茶系黑咖啡／茶／水，零负担，唔使换",
+              "原味板烧鸡腿麦满分唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 21,
+              "after_ab": 280,
+              "ab_pct": 7.0,
+              "exp_mid": 45.0,
+              "after_all": 235.0,
+              "all_pct": 21.9
+            }
+          }
+        }
+      ],
+      "totals": {
+        "kcal": 1195,
+        "protein": 70,
+        "sodium": 1856,
+        "fat": 46
+      },
+      "warnings": [],
+      "banned_note": [
+        {
+          "name": "100%苹果汁",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "【美汁源】“黄金橙橙”",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "中杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大薯条",
+          "reason": "大薯条（高热量小食）"
+        },
+        {
+          "name": "菠萝派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "雪碧中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "香芋派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "麦旋酷阳光橙",
+          "reason": "含糖饮料"
+        }
+      ]
+    },
+    {
+      "budget": 1200,
+      "goal": "高蛋白",
+      "avoid_snacks": true,
+      "pro_floor": 48,
+      "sodium_cap": 2000,
+      "meals": [
+        {
+          "meal": "早餐",
+          "key": "breakfast",
+          "main": "烟肉蛋麦满分",
+          "main_kcal": 260,
+          "main_pro": 16,
+          "side": "大杯玉米杯",
+          "side_kcal": 87,
+          "side_pro": 4,
+          "drink": "冰美式小杯",
+          "drink_kcal": 10,
+          "drink_pro": 1,
+          "kcal": 357,
+          "protein": 21,
+          "sodium": 485,
+          "fat": 11,
+          "lower": 250,
+          "upper": 403,
+          "used_breakfast_pool": true,
+          "transform": {
+            "main": "烟肉蛋麦满分",
+            "side": "大杯玉米杯",
+            "drink": "冰美式小杯",
+            "default_kcal": 357,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "烟肉蛋麦满分原食法",
+                "after": "烟肉蛋麦满分经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "大杯玉米杯换苹果片，慳 55 卡",
+                "before": "大杯玉米杯 87kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 55,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)、小杯玉米杯(53kcal)",
+              "冰美式小杯系黑咖啡／茶／水，零负担，唔使换",
+              "烟肉蛋麦满分唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 55,
+              "after_ab": 302,
+              "ab_pct": 15.4,
+              "exp_mid": 105.0,
+              "after_all": 197.0,
+              "all_pct": 44.8
+            }
+          }
+        },
+        {
+          "meal": "午餐",
+          "key": "lunch",
+          "main": "蜜汁快乐",
+          "main_kcal": 258,
+          "main_pro": 22,
+          "side": "小杯玉米杯",
+          "side_kcal": 53,
+          "side_pro": 2,
+          "drink": "卡布奇诺大杯",
+          "drink_kcal": 223,
+          "drink_pro": 13,
+          "kcal": 534,
+          "protein": 37,
+          "sodium": 842,
+          "fat": 20,
+          "lower": 350,
+          "upper": 547,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "蜜汁快乐",
+            "side": "小杯玉米杯",
+            "drink": "卡布奇诺大杯",
+            "default_kcal": 534,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "蜜汁快乐原食法",
+                "after": "蜜汁快乐经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "小杯玉米杯换苹果片，慳 21 卡",
+                "before": "小杯玉米杯 53kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 21,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)",
+              "卡布奇诺大杯想再慳可以换无糖可乐／黑咖啡",
+              "蜜汁快乐唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 21,
+              "after_ab": 513,
+              "ab_pct": 3.9,
+              "exp_mid": 105.0,
+              "after_all": 408.0,
+              "all_pct": 23.6
+            }
+          }
+        },
+        {
+          "meal": "晚餐",
+          "key": "dinner",
+          "main": "儿童鱼排堡",
+          "main_kcal": 269,
+          "main_pro": 15,
+          "side": "苹果片",
+          "side_kcal": 32,
+          "side_pro": 0,
+          "drink": "锡兰红茶",
+          "drink_kcal": 2,
+          "drink_pro": 0,
+          "kcal": 303,
+          "protein": 15,
+          "sodium": 442,
+          "fat": 6,
+          "lower": 300,
+          "upper": 490,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "儿童鱼排堡",
+            "side": "苹果片",
+            "drink": "锡兰红茶",
+            "default_kcal": 303,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食鱼唔食包，估算慳 90-130 卡",
+                "before": "儿童鱼排堡原食法",
+                "after": "儿童鱼排堡经验改造",
+                "kcal_diff": [
+                  90,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "鱼堡含面包含碳水，经验去包降热量"
+              }
+            ],
+            "notes": [
+              "锡兰红茶系黑咖啡／茶／水，零负担，唔使换",
+              "儿童鱼排堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 0,
+              "after_ab": 303,
+              "ab_pct": 0.0,
+              "exp_mid": 110.0,
+              "after_all": 193.0,
+              "all_pct": 36.3
+            }
+          }
+        }
+      ],
+      "totals": {
+        "kcal": 1194,
+        "protein": 73,
+        "sodium": 1769,
+        "fat": 37
+      },
+      "warnings": [],
+      "banned_note": [
+        {
+          "name": "100%苹果汁",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "【美汁源】“黄金橙橙”",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "中杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大薯条",
+          "reason": "大薯条（高热量小食）"
+        },
+        {
+          "name": "菠萝派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "雪碧中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "香芋派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "麦旋酷阳光橙",
+          "reason": "含糖饮料"
+        }
+      ]
+    },
+    {
+      "budget": 1200,
+      "goal": "低钠",
+      "avoid_snacks": true,
+      "pro_floor": 48,
+      "sodium_cap": 2000,
+      "meals": [
+        {
+          "meal": "早餐",
+          "key": "breakfast",
+          "main": "烟肉蛋麦满分",
+          "main_kcal": 260,
+          "main_pro": 16,
+          "side": "大杯玉米杯",
+          "side_kcal": 87,
+          "side_pro": 4,
+          "drink": "冰美式小杯",
+          "drink_kcal": 10,
+          "drink_pro": 1,
+          "kcal": 357,
+          "protein": 21,
+          "sodium": 485,
+          "fat": 11,
+          "lower": 250,
+          "upper": 403,
+          "used_breakfast_pool": true,
+          "transform": {
+            "main": "烟肉蛋麦满分",
+            "side": "大杯玉米杯",
+            "drink": "冰美式小杯",
+            "default_kcal": 357,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "烟肉蛋麦满分原食法",
+                "after": "烟肉蛋麦满分经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "大杯玉米杯换苹果片，慳 55 卡",
+                "before": "大杯玉米杯 87kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 55,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)、小杯玉米杯(53kcal)",
+              "冰美式小杯系黑咖啡／茶／水，零负担，唔使换",
+              "烟肉蛋麦满分唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 55,
+              "after_ab": 302,
+              "ab_pct": 15.4,
+              "exp_mid": 105.0,
+              "after_all": 197.0,
+              "all_pct": 44.8
+            }
+          }
+        },
+        {
+          "meal": "午餐",
+          "key": "lunch",
+          "main": "儿童鱼排堡",
+          "main_kcal": 269,
+          "main_pro": 15,
+          "side": "小杯玉米杯",
+          "side_kcal": 53,
+          "side_pro": 2,
+          "drink": "优品豆浆小杯",
+          "drink_kcal": 151,
+          "drink_pro": 6,
+          "kcal": 473,
+          "protein": 23,
+          "sodium": 475,
+          "fat": 10,
+          "lower": 350,
+          "upper": 547,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "儿童鱼排堡",
+            "side": "小杯玉米杯",
+            "drink": "优品豆浆小杯",
+            "default_kcal": 473,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食鱼唔食包，估算慳 90-130 卡",
+                "before": "儿童鱼排堡原食法",
+                "after": "儿童鱼排堡经验改造",
+                "kcal_diff": [
+                  90,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "鱼堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "小杯玉米杯换苹果片，慳 21 卡",
+                "before": "小杯玉米杯 53kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 21,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)",
+              "优品豆浆小杯想再慳可以换无糖可乐／黑咖啡",
+              "儿童鱼排堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 21,
+              "after_ab": 452,
+              "ab_pct": 4.4,
+              "exp_mid": 110.0,
+              "after_all": 342.0,
+              "all_pct": 27.7
+            }
+          }
+        },
+        {
+          "meal": "晚餐",
+          "key": "dinner",
+          "main": "汉堡包",
+          "main_kcal": 248,
+          "main_pro": 13,
+          "side": "苹果片",
+          "side_kcal": 32,
+          "side_pro": 0,
+          "drink": "阳光柠檬红茶小杯",
+          "drink_kcal": 85,
+          "drink_pro": 0,
+          "kcal": 365,
+          "protein": 13,
+          "sodium": 504,
+          "fat": 8,
+          "lower": 300,
+          "upper": 490,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "汉堡包",
+            "side": "苹果片",
+            "drink": "阳光柠檬红茶小杯",
+            "default_kcal": 365,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "汉堡包原食法",
+                "after": "汉堡包经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              }
+            ],
+            "notes": [
+              "阳光柠檬红茶小杯系黑咖啡／茶／水，零负担，唔使换",
+              "汉堡包唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 0,
+              "after_ab": 365,
+              "ab_pct": 0.0,
+              "exp_mid": 105.0,
+              "after_all": 260.0,
+              "all_pct": 28.8
+            }
+          }
+        }
+      ],
+      "totals": {
+        "kcal": 1195,
+        "protein": 57,
+        "sodium": 1464,
+        "fat": 29
+      },
+      "warnings": [],
+      "banned_note": [
+        {
+          "name": "100%苹果汁",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "【美汁源】“黄金橙橙”",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "中杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大薯条",
+          "reason": "大薯条（高热量小食）"
+        },
+        {
+          "name": "菠萝派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "雪碧中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "香芋派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "麦旋酷阳光橙",
+          "reason": "含糖饮料"
+        }
+      ]
+    },
+    {
+      "budget": 1500,
+      "goal": "均衡",
+      "avoid_snacks": true,
+      "pro_floor": 60,
+      "sodium_cap": 2000,
+      "meals": [
+        {
+          "meal": "早餐",
+          "key": "breakfast",
+          "main": "烟肉蛋麦满分",
+          "main_kcal": 260,
+          "main_pro": 16,
+          "side": "大杯玉米杯",
+          "side_kcal": 87,
+          "side_pro": 4,
+          "drink": "纯牛奶（盒装）",
+          "drink_kcal": 129,
+          "drink_pro": 7,
+          "kcal": 476,
+          "protein": 27,
+          "sodium": 558,
+          "fat": 18,
+          "lower": 294,
+          "upper": 504,
+          "used_breakfast_pool": true,
+          "transform": {
+            "main": "烟肉蛋麦满分",
+            "side": "大杯玉米杯",
+            "drink": "纯牛奶（盒装）",
+            "default_kcal": 476,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "烟肉蛋麦满分原食法",
+                "after": "烟肉蛋麦满分经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "大杯玉米杯换苹果片，慳 55 卡",
+                "before": "大杯玉米杯 87kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 55,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)、小杯玉米杯(53kcal)",
+              "纯牛奶（盒装）系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "烟肉蛋麦满分唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 55,
+              "after_ab": 421,
+              "ab_pct": 11.6,
+              "exp_mid": 105.0,
+              "after_all": 316.0,
+              "all_pct": 33.6
+            }
+          }
+        },
+        {
+          "meal": "午餐",
+          "key": "lunch",
+          "main": "原味板烧鸡腿炒双蛋堡",
+          "main_kcal": 419,
+          "main_pro": 27,
+          "side": "小杯玉米杯",
+          "side_kcal": 53,
+          "side_pro": 2,
+          "drink": "优品豆浆小杯",
+          "drink_kcal": 151,
+          "drink_pro": 6,
+          "kcal": 623,
+          "protein": 35,
+          "sodium": 748,
+          "fat": 25,
+          "lower": 399,
+          "upper": 684,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "原味板烧鸡腿炒双蛋堡",
+            "side": "小杯玉米杯",
+            "drink": "优品豆浆小杯",
+            "default_kcal": 623,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "去鸡皮／沥油食法，估算慳 30-60 卡",
+                "before": "原味板烧鸡腿炒双蛋堡原食法",
+                "after": "原味板烧鸡腿炒双蛋堡经验改造",
+                "kcal_diff": [
+                  30,
+                  60
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "炸鸡经验去鸡皮降脂"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "小杯玉米杯换苹果片，慳 21 卡",
+                "before": "小杯玉米杯 53kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 21,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)",
+              "优品豆浆小杯想再慳可以换无糖可乐／黑咖啡",
+              "原味板烧鸡腿炒双蛋堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 21,
+              "after_ab": 602,
+              "ab_pct": 3.4,
+              "exp_mid": 45.0,
+              "after_all": 557.0,
+              "all_pct": 10.6
+            }
+          }
+        },
+        {
+          "meal": "晚餐",
+          "key": "dinner",
+          "main": "儿童鱼排堡",
+          "main_kcal": 269,
+          "main_pro": 15,
+          "side": "苹果片",
+          "side_kcal": 32,
+          "side_pro": 0,
+          "drink": "冰奶铁小杯",
+          "drink_kcal": 86,
+          "drink_pro": 5,
+          "kcal": 387,
+          "protein": 20,
+          "sodium": 486,
+          "fat": 10,
+          "lower": 357,
+          "upper": 612,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "儿童鱼排堡",
+            "side": "苹果片",
+            "drink": "冰奶铁小杯",
+            "default_kcal": 387,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食鱼唔食包，估算慳 90-130 卡",
+                "before": "儿童鱼排堡原食法",
+                "after": "儿童鱼排堡经验改造",
+                "kcal_diff": [
+                  90,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "鱼堡含面包含碳水，经验去包降热量"
+              }
+            ],
+            "notes": [
+              "冰奶铁小杯系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "儿童鱼排堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 0,
+              "after_ab": 387,
+              "ab_pct": 0.0,
+              "exp_mid": 110.0,
+              "after_all": 277.0,
+              "all_pct": 28.4
+            }
+          }
+        }
+      ],
+      "totals": {
+        "kcal": 1486,
+        "protein": 82,
+        "sodium": 1792,
+        "fat": 53
+      },
+      "warnings": [],
+      "banned_note": [
+        {
+          "name": "100%苹果汁",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "【美汁源】“黄金橙橙”",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "中杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大薯条",
+          "reason": "大薯条（高热量小食）"
+        },
+        {
+          "name": "菠萝派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "雪碧中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "香芋派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "麦旋酷阳光橙",
+          "reason": "含糖饮料"
+        }
+      ]
+    },
+    {
+      "budget": 1500,
+      "goal": "高蛋白",
+      "avoid_snacks": true,
+      "pro_floor": 60,
+      "sodium_cap": 2000,
+      "meals": [
+        {
+          "meal": "早餐",
+          "key": "breakfast",
+          "main": "烟肉蛋麦满分",
+          "main_kcal": 260,
+          "main_pro": 16,
+          "side": "大杯玉米杯",
+          "side_kcal": 87,
+          "side_pro": 4,
+          "drink": "热牛奶小杯",
+          "drink_kcal": 147,
+          "drink_pro": 8,
+          "kcal": 494,
+          "protein": 28,
+          "sodium": 569,
+          "fat": 18,
+          "lower": 294,
+          "upper": 504,
+          "used_breakfast_pool": true,
+          "transform": {
+            "main": "烟肉蛋麦满分",
+            "side": "大杯玉米杯",
+            "drink": "热牛奶小杯",
+            "default_kcal": 494,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "烟肉蛋麦满分原食法",
+                "after": "烟肉蛋麦满分经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "大杯玉米杯换苹果片，慳 55 卡",
+                "before": "大杯玉米杯 87kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 55,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)、小杯玉米杯(53kcal)",
+              "热牛奶小杯系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "烟肉蛋麦满分唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 55,
+              "after_ab": 439,
+              "ab_pct": 11.1,
+              "exp_mid": 105.0,
+              "after_all": 334.0,
+              "all_pct": 32.4
+            }
+          }
+        },
+        {
+          "meal": "午餐",
+          "key": "lunch",
+          "main": "儿童鱼排堡",
+          "main_kcal": 269,
+          "main_pro": 15,
+          "side": "小杯玉米杯",
+          "side_kcal": 53,
+          "side_pro": 2,
+          "drink": "热奶铁中杯",
+          "drink_kcal": 186,
+          "drink_pro": 11,
+          "kcal": 508,
+          "protein": 28,
+          "sodium": 542,
+          "fat": 15,
+          "lower": 399,
+          "upper": 684,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "儿童鱼排堡",
+            "side": "小杯玉米杯",
+            "drink": "热奶铁中杯",
+            "default_kcal": 508,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食鱼唔食包，估算慳 90-130 卡",
+                "before": "儿童鱼排堡原食法",
+                "after": "儿童鱼排堡经验改造",
+                "kcal_diff": [
+                  90,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "鱼堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "小杯玉米杯换苹果片，慳 21 卡",
+                "before": "小杯玉米杯 53kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 21,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)",
+              "热奶铁中杯系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "儿童鱼排堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 21,
+              "after_ab": 487,
+              "ab_pct": 4.1,
+              "exp_mid": 110.0,
+              "after_all": 377.0,
+              "all_pct": 25.8
+            }
+          }
+        },
+        {
+          "meal": "晚餐",
+          "key": "dinner",
+          "main": "蜜汁快乐",
+          "main_kcal": 258,
+          "main_pro": 22,
+          "side": "苹果片",
+          "side_kcal": 32,
+          "side_pro": 0,
+          "drink": "优品豆浆大杯",
+          "drink_kcal": 202,
+          "drink_pro": 8,
+          "kcal": 492,
+          "protein": 30,
+          "sodium": 764,
+          "fat": 13,
+          "lower": 357,
+          "upper": 612,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "蜜汁快乐",
+            "side": "苹果片",
+            "drink": "优品豆浆大杯",
+            "default_kcal": 492,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "蜜汁快乐原食法",
+                "after": "蜜汁快乐经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              }
+            ],
+            "notes": [
+              "优品豆浆大杯想再慳可以换无糖可乐／黑咖啡",
+              "蜜汁快乐唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 0,
+              "after_ab": 492,
+              "ab_pct": 0.0,
+              "exp_mid": 105.0,
+              "after_all": 387.0,
+              "all_pct": 21.3
+            }
+          }
+        }
+      ],
+      "totals": {
+        "kcal": 1494,
+        "protein": 86,
+        "sodium": 1875,
+        "fat": 46
+      },
+      "warnings": [],
+      "banned_note": [
+        {
+          "name": "100%苹果汁",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "【美汁源】“黄金橙橙”",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "中杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大薯条",
+          "reason": "大薯条（高热量小食）"
+        },
+        {
+          "name": "菠萝派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "雪碧中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "香芋派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "麦旋酷阳光橙",
+          "reason": "含糖饮料"
+        }
+      ]
+    },
+    {
+      "budget": 1500,
+      "goal": "低钠",
+      "avoid_snacks": true,
+      "pro_floor": 60,
+      "sodium_cap": 2000,
+      "meals": [
+        {
+          "meal": "早餐",
+          "key": "breakfast",
+          "main": "烟肉蛋麦满分",
+          "main_kcal": 260,
+          "main_pro": 16,
+          "side": "大杯玉米杯",
+          "side_kcal": 87,
+          "side_pro": 4,
+          "drink": "纯牛奶（盒装）",
+          "drink_kcal": 129,
+          "drink_pro": 7,
+          "kcal": 476,
+          "protein": 27,
+          "sodium": 558,
+          "fat": 18,
+          "lower": 294,
+          "upper": 504,
+          "used_breakfast_pool": true,
+          "transform": {
+            "main": "烟肉蛋麦满分",
+            "side": "大杯玉米杯",
+            "drink": "纯牛奶（盒装）",
+            "default_kcal": 476,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "烟肉蛋麦满分原食法",
+                "after": "烟肉蛋麦满分经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "大杯玉米杯换苹果片，慳 55 卡",
+                "before": "大杯玉米杯 87kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 55,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)、小杯玉米杯(53kcal)",
+              "纯牛奶（盒装）系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "烟肉蛋麦满分唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 55,
+              "after_ab": 421,
+              "ab_pct": 11.6,
+              "exp_mid": 105.0,
+              "after_all": 316.0,
+              "all_pct": 33.6
+            }
+          }
+        },
+        {
+          "meal": "午餐",
+          "key": "lunch",
+          "main": "儿童鱼排堡",
+          "main_kcal": 269,
+          "main_pro": 15,
+          "side": "小杯玉米杯",
+          "side_kcal": 53,
+          "side_pro": 2,
+          "drink": "优品豆浆小杯",
+          "drink_kcal": 151,
+          "drink_pro": 6,
+          "kcal": 473,
+          "protein": 23,
+          "sodium": 475,
+          "fat": 10,
+          "lower": 399,
+          "upper": 684,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "儿童鱼排堡",
+            "side": "小杯玉米杯",
+            "drink": "优品豆浆小杯",
+            "default_kcal": 473,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食鱼唔食包，估算慳 90-130 卡",
+                "before": "儿童鱼排堡原食法",
+                "after": "儿童鱼排堡经验改造",
+                "kcal_diff": [
+                  90,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "鱼堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "小杯玉米杯换苹果片，慳 21 卡",
+                "before": "小杯玉米杯 53kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 21,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)",
+              "优品豆浆小杯想再慳可以换无糖可乐／黑咖啡",
+              "儿童鱼排堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 21,
+              "after_ab": 452,
+              "ab_pct": 4.4,
+              "exp_mid": 110.0,
+              "after_all": 342.0,
+              "all_pct": 27.7
+            }
+          }
+        },
+        {
+          "meal": "晚餐",
+          "key": "dinner",
+          "main": "汉堡包",
+          "main_kcal": 248,
+          "main_pro": 13,
+          "side": "苹果片",
+          "side_kcal": 32,
+          "side_pro": 0,
+          "drink": "冰牛奶大杯",
+          "drink_kcal": 269,
+          "drink_pro": 15,
+          "kcal": 549,
+          "protein": 28,
+          "sodium": 646,
+          "fat": 21,
+          "lower": 357,
+          "upper": 612,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "汉堡包",
+            "side": "苹果片",
+            "drink": "冰牛奶大杯",
+            "default_kcal": 549,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "汉堡包原食法",
+                "after": "汉堡包经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              }
+            ],
+            "notes": [
+              "冰牛奶大杯系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "汉堡包唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 0,
+              "after_ab": 549,
+              "ab_pct": 0.0,
+              "exp_mid": 105.0,
+              "after_all": 444.0,
+              "all_pct": 19.1
+            }
+          }
+        }
+      ],
+      "totals": {
+        "kcal": 1498,
+        "protein": 78,
+        "sodium": 1679,
+        "fat": 49
+      },
+      "warnings": [],
+      "banned_note": [
+        {
+          "name": "100%苹果汁",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "【美汁源】“黄金橙橙”",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "中杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大薯条",
+          "reason": "大薯条（高热量小食）"
+        },
+        {
+          "name": "菠萝派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "雪碧中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "香芋派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "麦旋酷阳光橙",
+          "reason": "含糖饮料"
+        }
+      ]
+    },
+    {
+      "budget": 1800,
+      "goal": "均衡",
+      "avoid_snacks": true,
+      "pro_floor": 72,
+      "sodium_cap": 2000,
+      "meals": [
+        {
+          "meal": "早餐",
+          "key": "breakfast",
+          "main": "烟肉蛋麦满分",
+          "main_kcal": 260,
+          "main_pro": 16,
+          "side": "大杯玉米杯",
+          "side_kcal": 87,
+          "side_pro": 4,
+          "drink": "热牛奶小杯",
+          "drink_kcal": 147,
+          "drink_pro": 8,
+          "kcal": 494,
+          "protein": 28,
+          "sodium": 569,
+          "fat": 18,
+          "lower": 353,
+          "upper": 605,
+          "used_breakfast_pool": true,
+          "transform": {
+            "main": "烟肉蛋麦满分",
+            "side": "大杯玉米杯",
+            "drink": "热牛奶小杯",
+            "default_kcal": 494,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "烟肉蛋麦满分原食法",
+                "after": "烟肉蛋麦满分经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "大杯玉米杯换苹果片，慳 55 卡",
+                "before": "大杯玉米杯 87kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 55,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)、小杯玉米杯(53kcal)",
+              "热牛奶小杯系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "烟肉蛋麦满分唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 55,
+              "after_ab": 439,
+              "ab_pct": 11.1,
+              "exp_mid": 105.0,
+              "after_all": 334.0,
+              "all_pct": 32.4
+            }
+          }
+        },
+        {
+          "meal": "午餐",
+          "key": "lunch",
+          "main": "原味板烧鸡腿炒双蛋堡",
+          "main_kcal": 419,
+          "main_pro": 27,
+          "side": "小杯玉米杯",
+          "side_kcal": 53,
+          "side_pro": 2,
+          "drink": "优品豆浆小杯",
+          "drink_kcal": 151,
+          "drink_pro": 6,
+          "kcal": 623,
+          "protein": 35,
+          "sodium": 748,
+          "fat": 25,
+          "lower": 479,
+          "upper": 821,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "原味板烧鸡腿炒双蛋堡",
+            "side": "小杯玉米杯",
+            "drink": "优品豆浆小杯",
+            "default_kcal": 623,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "去鸡皮／沥油食法，估算慳 30-60 卡",
+                "before": "原味板烧鸡腿炒双蛋堡原食法",
+                "after": "原味板烧鸡腿炒双蛋堡经验改造",
+                "kcal_diff": [
+                  30,
+                  60
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "炸鸡经验去鸡皮降脂"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "小杯玉米杯换苹果片，慳 21 卡",
+                "before": "小杯玉米杯 53kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 21,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)",
+              "优品豆浆小杯想再慳可以换无糖可乐／黑咖啡",
+              "原味板烧鸡腿炒双蛋堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 21,
+              "after_ab": 602,
+              "ab_pct": 3.4,
+              "exp_mid": 45.0,
+              "after_all": 557.0,
+              "all_pct": 10.6
+            }
+          }
+        },
+        {
+          "meal": "晚餐",
+          "key": "dinner",
+          "main": "儿童鱼排堡",
+          "main_kcal": 269,
+          "main_pro": 15,
+          "side": "小薯条",
+          "side_kcal": 210,
+          "side_pro": 3,
+          "drink": "热奶铁小杯",
+          "drink_kcal": 134,
+          "drink_pro": 8,
+          "kcal": 613,
+          "protein": 26,
+          "sodium": 634,
+          "fat": 21,
+          "lower": 428,
+          "upper": 734,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "儿童鱼排堡",
+            "side": "小薯条",
+            "drink": "热奶铁小杯",
+            "default_kcal": 613,
+            "actions": [
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "小薯条换苹果片，慳 178 卡",
+                "before": "小薯条 210kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 178,
+                "price_diff": 0.0,
+                "match": "exact"
+              },
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食鱼唔食包，估算慳 90-130 卡",
+                "before": "儿童鱼排堡原食法",
+                "after": "儿童鱼排堡经验改造",
+                "kcal_diff": [
+                  90,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "鱼堡含面包含碳水，经验去包降热量"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)、小杯玉米杯(53kcal)、大杯玉米杯(87kcal)",
+              "热奶铁小杯系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "儿童鱼排堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 178,
+              "after_ab": 435,
+              "ab_pct": 29.0,
+              "exp_mid": 110.0,
+              "after_all": 325.0,
+              "all_pct": 47.0
+            }
+          }
+        }
+      ],
+      "totals": {
+        "kcal": 1730,
+        "protein": 89,
+        "sodium": 1951,
+        "fat": 64
+      },
+      "warnings": [],
+      "banned_note": [
+        {
+          "name": "100%苹果汁",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "【美汁源】“黄金橙橙”",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "中杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大薯条",
+          "reason": "大薯条（高热量小食）"
+        },
+        {
+          "name": "菠萝派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "雪碧中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "香芋派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "麦旋酷阳光橙",
+          "reason": "含糖饮料"
+        }
+      ]
+    },
+    {
+      "budget": 1800,
+      "goal": "高蛋白",
+      "avoid_snacks": true,
+      "pro_floor": 72,
+      "sodium_cap": 2000,
+      "meals": [
+        {
+          "meal": "早餐",
+          "key": "breakfast",
+          "main": "原味板烧鸡腿炒双蛋堡",
+          "main_kcal": 419,
+          "main_pro": 27,
+          "side": "小杯玉米杯",
+          "side_kcal": 53,
+          "side_pro": 2,
+          "drink": "纯牛奶（盒装）",
+          "drink_kcal": 129,
+          "drink_pro": 7,
+          "kcal": 601,
+          "protein": 36,
+          "sodium": 789,
+          "fat": 29,
+          "lower": 353,
+          "upper": 605,
+          "used_breakfast_pool": true,
+          "transform": {
+            "main": "原味板烧鸡腿炒双蛋堡",
+            "side": "小杯玉米杯",
+            "drink": "纯牛奶（盒装）",
+            "default_kcal": 601,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "去鸡皮／沥油食法，估算慳 30-60 卡",
+                "before": "原味板烧鸡腿炒双蛋堡原食法",
+                "after": "原味板烧鸡腿炒双蛋堡经验改造",
+                "kcal_diff": [
+                  30,
+                  60
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "炸鸡经验去鸡皮降脂"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "小杯玉米杯换苹果片，慳 21 卡",
+                "before": "小杯玉米杯 53kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 21,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)",
+              "纯牛奶（盒装）系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "原味板烧鸡腿炒双蛋堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 21,
+              "after_ab": 580,
+              "ab_pct": 3.5,
+              "exp_mid": 45.0,
+              "after_all": 535.0,
+              "all_pct": 11.0
+            }
+          }
+        },
+        {
+          "meal": "午餐",
+          "key": "lunch",
+          "main": "猪柳炒双蛋堡",
+          "main_kcal": 437,
+          "main_pro": 25,
+          "side": "大杯玉米杯",
+          "side_kcal": 87,
+          "side_pro": 4,
+          "drink": "卡布奇诺大杯",
+          "drink_kcal": 223,
+          "drink_pro": 13,
+          "kcal": 747,
+          "protein": 42,
+          "sodium": 827,
+          "fat": 35,
+          "lower": 479,
+          "upper": 821,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "猪柳炒双蛋堡",
+            "side": "大杯玉米杯",
+            "drink": "卡布奇诺大杯",
+            "default_kcal": 747,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "猪柳炒双蛋堡原食法",
+                "after": "猪柳炒双蛋堡经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "大杯玉米杯换苹果片，慳 55 卡",
+                "before": "大杯玉米杯 87kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 55,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)、小杯玉米杯(53kcal)",
+              "卡布奇诺大杯想再慳可以换无糖可乐／黑咖啡",
+              "猪柳炒双蛋堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 55,
+              "after_ab": 692,
+              "ab_pct": 7.4,
+              "exp_mid": 105.0,
+              "after_all": 587.0,
+              "all_pct": 21.4
+            }
+          }
+        },
+        {
+          "meal": "晚餐",
+          "key": "dinner",
+          "main": "蜜汁快乐",
+          "main_kcal": 258,
+          "main_pro": 22,
+          "side": "苹果片",
+          "side_kcal": 32,
+          "side_pro": 0,
+          "drink": "冰奶铁大杯",
+          "drink_kcal": 162,
+          "drink_pro": 9,
+          "kcal": 452,
+          "protein": 31,
+          "sodium": 806,
+          "fat": 16,
+          "lower": 428,
+          "upper": 734,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "蜜汁快乐",
+            "side": "苹果片",
+            "drink": "冰奶铁大杯",
+            "default_kcal": 452,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "蜜汁快乐原食法",
+                "after": "蜜汁快乐经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              }
+            ],
+            "notes": [
+              "冰奶铁大杯系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "蜜汁快乐唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 0,
+              "after_ab": 452,
+              "ab_pct": 0.0,
+              "exp_mid": 105.0,
+              "after_all": 347.0,
+              "all_pct": 23.2
+            }
+          }
+        }
+      ],
+      "totals": {
+        "kcal": 1800,
+        "protein": 109,
+        "sodium": 2422,
+        "fat": 80
+      },
+      "warnings": [
+        "全日钠 2422mg 超过 2000mg 上限，留意水肿同血压；想控钠可换低钠饮品同少酱"
+      ],
+      "banned_note": [
+        {
+          "name": "100%苹果汁",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "【美汁源】“黄金橙橙”",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "中杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大薯条",
+          "reason": "大薯条（高热量小食）"
+        },
+        {
+          "name": "菠萝派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "雪碧中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "香芋派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "麦旋酷阳光橙",
+          "reason": "含糖饮料"
+        }
+      ]
+    },
+    {
+      "budget": 1800,
+      "goal": "低钠",
+      "avoid_snacks": true,
+      "pro_floor": 72,
+      "sodium_cap": 2000,
+      "meals": [
+        {
+          "meal": "早餐",
+          "key": "breakfast",
+          "main": "烟肉蛋麦满分",
+          "main_kcal": 260,
+          "main_pro": 16,
+          "side": "大杯玉米杯",
+          "side_kcal": 87,
+          "side_pro": 4,
+          "drink": "优品豆浆小杯",
+          "drink_kcal": 151,
+          "drink_pro": 6,
+          "kcal": 498,
+          "protein": 26,
+          "sodium": 517,
+          "fat": 14,
+          "lower": 353,
+          "upper": 605,
+          "used_breakfast_pool": true,
+          "transform": {
+            "main": "烟肉蛋麦满分",
+            "side": "大杯玉米杯",
+            "drink": "优品豆浆小杯",
+            "default_kcal": 498,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "烟肉蛋麦满分原食法",
+                "after": "烟肉蛋麦满分经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "大杯玉米杯换苹果片，慳 55 卡",
+                "before": "大杯玉米杯 87kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 55,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)、小杯玉米杯(53kcal)",
+              "优品豆浆小杯想再慳可以换无糖可乐／黑咖啡",
+              "烟肉蛋麦满分唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 55,
+              "after_ab": 443,
+              "ab_pct": 11.0,
+              "exp_mid": 105.0,
+              "after_all": 338.0,
+              "all_pct": 32.1
+            }
+          }
+        },
+        {
+          "meal": "午餐",
+          "key": "lunch",
+          "main": "儿童鱼排堡",
+          "main_kcal": 269,
+          "main_pro": 15,
+          "side": "小杯玉米杯",
+          "side_kcal": 53,
+          "side_pro": 2,
+          "drink": "冰牛奶大杯",
+          "drink_kcal": 269,
+          "drink_pro": 15,
+          "kcal": 591,
+          "protein": 32,
+          "sodium": 597,
+          "fat": 20,
+          "lower": 479,
+          "upper": 821,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "儿童鱼排堡",
+            "side": "小杯玉米杯",
+            "drink": "冰牛奶大杯",
+            "default_kcal": 591,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食鱼唔食包，估算慳 90-130 卡",
+                "before": "儿童鱼排堡原食法",
+                "after": "儿童鱼排堡经验改造",
+                "kcal_diff": [
+                  90,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "鱼堡含面包含碳水，经验去包降热量"
+              },
+              {
+                "type": "replace",
+                "level": "A",
+                "rnd": "小食",
+                "title": "小杯玉米杯换苹果片，慳 21 卡",
+                "before": "小杯玉米杯 53kcal",
+                "after": "苹果片 32kcal",
+                "kcal_diff": 21,
+                "price_diff": 0.0,
+                "match": "exact"
+              }
+            ],
+            "notes": [
+              "同类更低卡小食 Top3：苹果片(32kcal)",
+              "冰牛奶大杯系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "儿童鱼排堡唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 21,
+              "after_ab": 570,
+              "ab_pct": 3.6,
+              "exp_mid": 110.0,
+              "after_all": 460.0,
+              "all_pct": 22.2
+            }
+          }
+        },
+        {
+          "meal": "晚餐",
+          "key": "dinner",
+          "main": "牛气满满",
+          "main_kcal": 495,
+          "main_pro": 26,
+          "side": "苹果片",
+          "side_kcal": 32,
+          "side_pro": 0,
+          "drink": "冰奶铁中杯",
+          "drink_kcal": 148,
+          "drink_pro": 8,
+          "kcal": 675,
+          "protein": 34,
+          "sodium": 841,
+          "fat": 31,
+          "lower": 428,
+          "upper": 734,
+          "used_breakfast_pool": false,
+          "transform": {
+            "main": "牛气满满",
+            "side": "苹果片",
+            "drink": "冰奶铁中杯",
+            "default_kcal": 675,
+            "actions": [
+              {
+                "type": "experience",
+                "level": "C",
+                "rnd": "exp",
+                "title": "只食馅唔食包，估算慳 80-130 卡",
+                "before": "牛气满满原食法",
+                "after": "牛气满满经验改造",
+                "kcal_diff": [
+                  80,
+                  130
+                ],
+                "price_diff": 0.0,
+                "match": "experience",
+                "note": "汉堡含面包含碳水，经验去包降热量"
+              }
+            ],
+            "notes": [
+              "冰奶铁中杯系奶咖类，想再慳可以换黑咖啡／无糖可乐",
+              "牛气满满唔系套餐官方主食，去配料动作冇官方数据，唔乱讲"
+            ],
+            "summary": {
+              "best_save": 0,
+              "after_ab": 675,
+              "ab_pct": 0.0,
+              "exp_mid": 105.0,
+              "after_all": 570.0,
+              "all_pct": 15.6
+            }
+          }
+        }
+      ],
+      "totals": {
+        "kcal": 1764,
+        "protein": 92,
+        "sodium": 1955,
+        "fat": 65
+      },
+      "warnings": [],
+      "banned_note": [
+        {
+          "name": "100%苹果汁",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "【美汁源】“黄金橙橙”",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "中杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "可乐小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大杯怡泉+C",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "大薯条",
+          "reason": "大薯条（高热量小食）"
+        },
+        {
+          "name": "菠萝派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "雪碧中杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧大杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "雪碧小杯",
+          "reason": "含糖饮料"
+        },
+        {
+          "name": "香芋派",
+          "reason": "派（高糖高脂甜品）"
+        },
+        {
+          "name": "麦旋酷阳光橙",
+          "reason": "含糖饮料"
+        }
+      ]
+    }
+  ]
+}

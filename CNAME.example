@@ -1,0 +1,31 @@
+# 自定义域名（CNAME）说明
+
+## 唔建议你而家就启用 CNAME
+
+GitHub Pages 有两种地址：
+
+1. **默认地址（推荐，评委点开即用）**
+   `https://<你的用户名>.github.io/<仓库名>/`
+   呢个地址**唔需要任何配置**，Actions 部署完就有。
+
+2. **自定义域名**
+   需要一个你自己控制 DNS 嘅域名。如果你放咗 `CNAME` 文件但 DNS 冇配好，
+   GitHub 会把 `<用户名>.github.io/<仓库名>/` **301 跳转去嗰个未配置嘅域名**，
+   评委点开就会打唔开——所以唔好乱填。
+
+## 要启用自定义域名，照下面做
+
+```bash
+# 1）喺仓库根目录建 CNAME，里面只写域名一行
+echo "mcd.example.com" > CNAME
+
+# 2）去你嘅 DNS 服务商加记录
+#    如果用 apex 域（mcd.example.com）：加 4 条 A 记录指向
+#      185.199.108.153 / 185.199.109.153 / 185.199.110.153 / 185.199.111.153
+#    如果用子域（www.mcd.example.com）：加 1 条 CNAME 指向 <用户名>.github.io
+
+# 3）仓库 Settings → Pages → Custom domain 填同一个域名，等 HTTPS 证书签发
+```
+
+`deploy.yml` 已经写好：只要仓库根目录有 `CNAME`，部署时会自动带上去；
+冇就唔会带，默认 github.io 链接照常用。

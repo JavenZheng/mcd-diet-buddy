@@ -1,0 +1,1035 @@
+{
+  "fetched_at": "2026-10-25 00:13",
+  "source": "麦当劳官方 MCP（query-nearby-stores / query-meals）",
+  "note": "数据来自麦当劳官方 MCP（query-nearby-stores + query-meals），抓取时间见 fetched_at。两个必须如实告知嘅官方约束：(1) 官方唔返回门店精确经纬度（longitude/latitude 恒为 0.0），所以显示嘅「距 XX m」系官方相对我哋查询地标嘅距离，唔系相对你而家位置；(2) query-meals 喺门店非营业时间会报错（600057），所以部分门店拉唔到菜单，标记为未预载，唔会话你知嗰间店有冇呢个套餐。",
+  "anchors": [
+    {
+      "city": "广州",
+      "keyword": "中山大学南校区",
+      "lat": 23.1066,
+      "lng": 113.298,
+      "stores": [
+        {
+          "storeCode": "1400028",
+          "storeName": "麦当劳广州新港西路餐厅",
+          "address": "新港西路142号3, 4号楼",
+          "distance": 673,
+          "businessStatus": true,
+          "businessStartTime": "00:00",
+          "businessEndTime": "23:59"
+        },
+        {
+          "storeCode": "1400916",
+          "storeName": "麦当劳广州滨江东路嘉仕花园餐厅",
+          "address": "怡凤街2号01综合商场首层自编01商铺",
+          "distance": 722,
+          "businessStatus": false,
+          "businessStartTime": "07:00",
+          "businessEndTime": "23:00"
+        },
+        {
+          "storeCode": "1400870",
+          "storeName": "麦当劳广州新港西路中大门城市之丘餐厅",
+          "address": "新港西路82号自编B-1区域东2101、东2213铺位",
+          "distance": 827,
+          "businessStatus": false,
+          "businessStartTime": "07:00",
+          "businessEndTime": "23:00"
+        },
+        {
+          "storeCode": "1400206",
+          "storeName": "麦当劳广州金纺路餐厅",
+          "address": "国际轻纺城金纺路2号",
+          "distance": 969,
+          "businessStatus": false,
+          "businessStartTime": "08:00",
+          "businessEndTime": "20:00"
+        },
+        {
+          "storeCode": "1400071",
+          "storeName": "麦当劳广州富景花园餐厅",
+          "address": "新港西路68号富景花园首层",
+          "distance": 974,
+          "businessStatus": true,
+          "businessStartTime": "00:00",
+          "businessEndTime": "23:59"
+        }
+      ]
+    },
+    {
+      "city": "深圳",
+      "keyword": "深圳北站",
+      "lat": 22.61,
+      "lng": 114.029,
+      "stores": [
+        {
+          "storeCode": "1420227",
+          "storeName": "麦当劳深圳北站站内一店餐厅(B18/B19检票口上方)",
+          "address": "深圳北站候车大厅B区二楼（B18/B19检票口上方）",
+          "distance": 62,
+          "businessStatus": false,
+          "businessStartTime": "06:00",
+          "businessEndTime": "22:00"
+        },
+        {
+          "storeCode": "1421080",
+          "storeName": "麦当劳深圳北站站内四店(A18/A19检票口上方)餐厅",
+          "address": "深圳北站站内候车厅2F01",
+          "distance": 87,
+          "businessStatus": false,
+          "businessStartTime": "06:00",
+          "businessEndTime": "22:00"
+        },
+        {
+          "storeCode": "1420702",
+          "storeName": "麦当劳深圳北站站内二店餐厅(B2/B3检票口上方)",
+          "address": "北致远中路深圳北高铁站候车厅B区2-32-2号",
+          "distance": 99,
+          "businessStatus": false,
+          "businessStartTime": "06:00",
+          "businessEndTime": "22:00"
+        },
+        {
+          "storeCode": "1420893",
+          "storeName": "麦当劳深圳北站站内三店餐厅(A1/A2检票口上方)",
+          "address": "深圳北站候车厅3楼2F18-2",
+          "distance": 154,
+          "businessStatus": false,
+          "businessStartTime": "06:00",
+          "businessEndTime": "21:00"
+        },
+        {
+          "storeCode": "1420642",
+          "storeName": "麦当劳深圳北站东广场餐厅(站厅外A2出站口)",
+          "address": "民治街道深圳北站站外东广场麦当劳（深铁汇坊首层）",
+          "distance": 285,
+          "businessStatus": false,
+          "businessStartTime": "07:00",
+          "businessEndTime": "22:00"
+        }
+      ]
+    },
+    {
+      "city": "上海",
+      "keyword": "人民广场",
+      "lat": 31.2304,
+      "lng": 121.4737,
+      "stores": [
+        {
+          "storeCode": "1450713",
+          "storeName": "麦当劳上海黄浦华旭国际大厦餐厅",
+          "address": "南京东路街道西藏中路336号",
+          "distance": 144,
+          "businessStatus": true,
+          "businessStartTime": "00:00",
+          "businessEndTime": "23:59"
+        },
+        {
+          "storeCode": "1450441",
+          "storeName": "麦当劳上海福州路餐厅",
+          "address": "福州路666号",
+          "distance": 235,
+          "businessStatus": false,
+          "businessStartTime": "06:30",
+          "businessEndTime": "23:00"
+        },
+        {
+          "storeCode": "1450056",
+          "storeName": "麦当劳上海食品一店餐厅",
+          "address": "南京东路720号",
+          "distance": 355,
+          "businessStatus": false,
+          "businessStartTime": "06:30",
+          "businessEndTime": "23:00"
+        },
+        {
+          "storeCode": "1450195",
+          "storeName": "麦当劳上海雅居乐餐厅",
+          "address": "西藏中路525号",
+          "distance": 382,
+          "businessStatus": false,
+          "businessStartTime": "06:00",
+          "businessEndTime": "23:00"
+        },
+        {
+          "storeCode": "1450124",
+          "storeName": "麦当劳上海南京西路NX258餐厅",
+          "address": "南京西路258号1幢一层",
+          "distance": 412,
+          "businessStatus": false,
+          "businessStartTime": "07:00",
+          "businessEndTime": "23:00"
+        }
+      ]
+    },
+    {
+      "city": "北京",
+      "keyword": "三里屯",
+      "lat": 39.937,
+      "lng": 116.455,
+      "stores": [
+        {
+          "storeCode": "1951066",
+          "storeName": "麦当劳北京长虹桥餐厅",
+          "address": "工人体育场北路2号",
+          "distance": 628,
+          "businessStatus": false,
+          "businessStartTime": "06:00",
+          "businessEndTime": "23:00"
+        },
+        {
+          "storeCode": "1950050",
+          "storeName": "麦当劳北京团结湖餐厅",
+          "address": "农展馆南里11号楼",
+          "distance": 933,
+          "businessStatus": true,
+          "businessStartTime": "00:00",
+          "businessEndTime": "23:59"
+        },
+        {
+          "storeCode": "1951027",
+          "storeName": "麦当劳北京吉市口东路（佳汇中心）餐厅",
+          "address": "吉庆里6号楼一层101内02",
+          "distance": 1351,
+          "businessStatus": false,
+          "businessStartTime": "07:00",
+          "businessEndTime": "23:00"
+        },
+        {
+          "storeCode": "1950085",
+          "storeName": "麦当劳北京工体北路餐厅",
+          "address": "新中西里26号",
+          "distance": 1355,
+          "businessStatus": true,
+          "businessStartTime": "00:00",
+          "businessEndTime": "23:59"
+        },
+        {
+          "storeCode": "1950006",
+          "storeName": "麦当劳北京东大桥餐厅",
+          "address": "工体东路13号",
+          "distance": 1397,
+          "businessStatus": false,
+          "businessStartTime": "06:00",
+          "businessEndTime": "23:00"
+        }
+      ]
+    }
+  ],
+  "menus": {
+    "1400028": [
+      {
+        "code": "9900005456",
+        "name": "麦辣鸡腿汉堡三件套",
+        "price": "33.5"
+      },
+      {
+        "code": "521741",
+        "name": "脆薯饼",
+        "price": "8.5"
+      },
+      {
+        "code": "9900016309",
+        "name": "龙焰鸡腿堡四件套",
+        "price": "29"
+      },
+      {
+        "code": "521986",
+        "name": "马苏里拉拉丝芝士条",
+        "price": "15"
+      },
+      {
+        "code": "9900011056",
+        "name": "全明星双人分享餐八件套",
+        "price": "49.9"
+      },
+      {
+        "code": "9900015730",
+        "name": "BFF四宫格小食盘",
+        "price": "39.8"
+      },
+      {
+        "code": "9900016078",
+        "name": "蘸酱麦麦脆汁鸡",
+        "price": "11.9"
+      },
+      {
+        "code": "9900015187",
+        "name": "人气经典随心配",
+        "price": "14.9"
+      },
+      {
+        "code": "9900016310",
+        "name": "龙焰芝士棒鸡腿堡四件套",
+        "price": "32"
+      },
+      {
+        "code": "9900015188",
+        "name": "精选超值随心配",
+        "price": "14.9"
+      },
+      {
+        "code": "521791",
+        "name": "茉莉奶绿雪冰",
+        "price": "23"
+      },
+      {
+        "code": "9900016077",
+        "name": "蘸酱炸鸡",
+        "price": "11.9"
+      },
+      {
+        "code": "9900015183",
+        "name": "精选单人餐三件套",
+        "price": "34.5"
+      },
+      {
+        "code": "9900016075",
+        "name": "龙焰芝士棒鸡腿堡三件套",
+        "price": "29.9"
+      },
+      {
+        "code": "9900015184",
+        "name": "牛肉汉堡四件套随心选",
+        "price": "32"
+      },
+      {
+        "code": "9900016073",
+        "name": "龙焰鸡腿堡三件套",
+        "price": "26.9"
+      },
+      {
+        "code": "9900004835",
+        "name": "麦乐鸡套餐",
+        "price": "25"
+      },
+      {
+        "code": "510488",
+        "name": "燕麦奶",
+        "price": "21"
+      },
+      {
+        "code": "9900005462",
+        "name": "板烧鸡腿堡三件套",
+        "price": "34.5"
+      },
+      {
+        "code": "3755",
+        "name": "纯牛奶(盒装)",
+        "price": "10.5"
+      },
+      {
+        "code": "9900005464",
+        "name": "双层吉士汉堡套餐",
+        "price": "34"
+      },
+      {
+        "code": "9900004236",
+        "name": "人气超值四件套随心选",
+        "price": "28"
+      },
+      {
+        "code": "9900005466",
+        "name": "巨无霸三件套",
+        "price": "36.5"
+      },
+      {
+        "code": "521914",
+        "name": "“葱不求人“按摩捶痒痒挠",
+        "price": "14.9"
+      },
+      {
+        "code": "6362",
+        "name": "100% 苹果汁(盒装)",
+        "price": "11.5"
+      },
+      {
+        "code": "9900000890",
+        "name": "板烧鸡腿堡四件套",
+        "price": "28"
+      },
+      {
+        "code": "521917",
+        "name": "泷愿成真麦旋风——大米风味",
+        "price": "16.5"
+      },
+      {
+        "code": "9900015729",
+        "name": "蘸酱BFF四宫格小食盘",
+        "price": "42.8"
+      },
+      {
+        "code": "9900005449",
+        "name": "吉士汉堡包套餐",
+        "price": "26"
+      },
+      {
+        "code": "9900012416",
+        "name": "麦炫酷",
+        "price": "13"
+      },
+      {
+        "code": "521950",
+        "name": "蓝莓爆爆珠麦旋风",
+        "price": "16.5"
+      },
+      {
+        "code": "9900015726",
+        "name": "韩式甜辣酱鸡块8块",
+        "price": "19.9"
+      },
+      {
+        "code": "521951",
+        "name": "灰焰圆筒",
+        "price": "5"
+      },
+      {
+        "code": "9900011126",
+        "name": "酥脆无双套餐",
+        "price": "20"
+      },
+      {
+        "code": "521952",
+        "name": "龙焰鸡腿堡",
+        "price": "15.9"
+      },
+      {
+        "code": "521953",
+        "name": "龙焰芝士棒鸡腿堡",
+        "price": "27"
+      },
+      {
+        "code": "521799",
+        "name": "日式鲜磨山葵酱",
+        "price": "3"
+      },
+      {
+        "code": "3010",
+        "name": "雪碧",
+        "price": "9.5"
+      },
+      {
+        "code": "521316",
+        "name": "高达吉士双牛堡",
+        "price": "22.5"
+      },
+      {
+        "code": "521954",
+        "name": "麦当劳联名复古棒球帽",
+        "price": "34.9"
+      },
+      {
+        "code": "521956",
+        "name": "麦当劳限定丝巾",
+        "price": "34.9"
+      },
+      {
+        "code": "9900011123",
+        "name": "“辣”么快乐套餐",
+        "price": "24"
+      },
+      {
+        "code": "1700",
+        "name": "麦辣鸡翅",
+        "price": "15"
+      },
+      {
+        "code": "521881",
+        "name": "马来咖喱风味薄皮肉骨鸡3块",
+        "price": "15.5"
+      },
+      {
+        "code": "9900000888",
+        "name": "巨无霸四件套",
+        "price": "32"
+      },
+      {
+        "code": "1100",
+        "name": "巨无霸",
+        "price": "25.5"
+      },
+      {
+        "code": "506189",
+        "name": "如意百宝袋",
+        "price": "12"
+      },
+      {
+        "code": "9900005451",
+        "name": "麦辣鸡翅4块套餐",
+        "price": "36.5"
+      },
+      {
+        "code": "4810",
+        "name": "薯条",
+        "price": "13.5"
+      },
+      {
+        "code": "510479",
+        "name": "燕麦奶铁",
+        "price": "9.9"
+      },
+      {
+        "code": "9900005453",
+        "name": "麦香鸡套餐",
+        "price": "28"
+      },
+      {
+        "code": "507394",
+        "name": "牛奶",
+        "price": "19"
+      },
+      {
+        "code": "9900004066",
+        "name": "堡堡随心拼（7件任选）",
+        "price": "72.5"
+      },
+      {
+        "code": "521929",
+        "name": "旋旋水手帽",
+        "price": "48.8"
+      },
+      {
+        "code": "1440",
+        "name": "麦辣鸡腿汉堡",
+        "price": "22.5"
+      },
+      {
+        "code": "1120",
+        "name": "双层吉士汉堡",
+        "price": "23"
+      },
+      {
+        "code": "521966",
+        "name": "韩式烟熏芝士风味酱",
+        "price": "3"
+      },
+      {
+        "code": "9900015165",
+        "name": "派",
+        "price": "8.5"
+      },
+      {
+        "code": "9900015164",
+        "name": "鸡肉堡单品精选",
+        "price": "23.5"
+      },
+      {
+        "code": "9900016096",
+        "name": "蘸酱韩式甜辣酱鸡块",
+        "price": "11.9"
+      },
+      {
+        "code": "9900015162",
+        "name": "牛肉堡单品精选",
+        "price": "14"
+      },
+      {
+        "code": "507389",
+        "name": "浓缩咖啡",
+        "price": "15"
+      },
+      {
+        "code": "9900015160",
+        "name": "大堡口福三件套",
+        "price": "23.9"
+      },
+      {
+        "code": "507387",
+        "name": "卡布奇诺",
+        "price": "21"
+      },
+      {
+        "code": "9900008751",
+        "name": "可乐",
+        "price": "9.5"
+      },
+      {
+        "code": "9900006332",
+        "name": "薄皮V翅双拼十翅",
+        "price": "49.9"
+      },
+      {
+        "code": "515955",
+        "name": "浓浓燕麦黑巧（冰/热）",
+        "price": "23"
+      },
+      {
+        "code": "9900005321",
+        "name": "BFF四宫格小食盘双人餐",
+        "price": "62.9"
+      },
+      {
+        "code": "9900000891",
+        "name": "麦辣鸡腿堡四件套",
+        "price": "28"
+      },
+      {
+        "code": "9900008754",
+        "name": "经典麦旋风",
+        "price": "15.5"
+      },
+      {
+        "code": "515837",
+        "name": "圆筒冰淇淋",
+        "price": "5"
+      },
+      {
+        "code": "521815",
+        "name": "韩式甜辣酱鸡块",
+        "price": "15"
+      },
+      {
+        "code": "514782",
+        "name": "脆脆薯条",
+        "price": "16"
+      },
+      {
+        "code": "1450",
+        "name": "麦香鸡",
+        "price": "17"
+      },
+      {
+        "code": "520445",
+        "name": "薄皮焦香V翅",
+        "price": "16"
+      },
+      {
+        "code": "521337",
+        "name": "鲜萃冰咖",
+        "price": "11.5"
+      },
+      {
+        "code": "520689",
+        "name": "鲜萃咖啡",
+        "price": "9.5"
+      },
+      {
+        "code": "507409",
+        "name": "麦咖啡™奶铁",
+        "price": "9.9"
+      },
+      {
+        "code": "3505",
+        "name": "锡兰红茶",
+        "price": "11.5"
+      },
+      {
+        "code": "1401",
+        "name": "麦乐鸡",
+        "price": "14"
+      },
+      {
+        "code": "521143",
+        "name": "4块麦乐鸡",
+        "price": "11.5"
+      },
+      {
+        "code": "507411",
+        "name": "麦咖啡™美式",
+        "price": "9.9"
+      },
+      {
+        "code": "515949",
+        "name": "浓浓黑巧雪冰",
+        "price": "23"
+      },
+      {
+        "code": "1406",
+        "name": "板烧鸡腿堡",
+        "price": "23.5"
+      },
+      {
+        "code": "9900005432",
+        "name": "麦麦脆汁鸡1块",
+        "price": "15"
+      },
+      {
+        "code": "515946",
+        "name": "浓浓黑巧（冰/热）",
+        "price": "21"
+      }
+    ],
+    "1450713": [
+      {
+        "code": "521741",
+        "name": "脆薯饼",
+        "price": "8.5"
+      },
+      {
+        "code": "2430",
+        "name": "【美汁源】“黄金橙橙”",
+        "price": "13"
+      },
+      {
+        "code": "9900016309",
+        "name": "龙焰鸡腿堡四件套",
+        "price": "29"
+      },
+      {
+        "code": "521986",
+        "name": "马苏里拉拉丝芝士条",
+        "price": "15"
+      },
+      {
+        "code": "9900011056",
+        "name": "全明星双人分享餐八件套",
+        "price": "52.4"
+      },
+      {
+        "code": "9900015730",
+        "name": "BFF四宫格小食盘",
+        "price": "40.8"
+      },
+      {
+        "code": "9900016078",
+        "name": "蘸酱麦麦脆汁鸡",
+        "price": "11.9"
+      },
+      {
+        "code": "9900015187",
+        "name": "人气经典随心配",
+        "price": "14.9"
+      },
+      {
+        "code": "9900016310",
+        "name": "龙焰芝士棒鸡腿堡四件套",
+        "price": "32"
+      },
+      {
+        "code": "9900015188",
+        "name": "精选超值随心配",
+        "price": "14.9"
+      },
+      {
+        "code": "9900016076",
+        "name": "“我就喜欢”鸡薯双全盒",
+        "price": "15.9"
+      },
+      {
+        "code": "9900016077",
+        "name": "蘸酱炸鸡",
+        "price": "11.9"
+      },
+      {
+        "code": "9900015183",
+        "name": "精选单人餐三件套",
+        "price": "34.5"
+      },
+      {
+        "code": "9900016075",
+        "name": "龙焰芝士棒鸡腿堡三件套",
+        "price": "29.9"
+      },
+      {
+        "code": "9900015184",
+        "name": "牛肉汉堡四件套随心选",
+        "price": "32"
+      },
+      {
+        "code": "9900016073",
+        "name": "龙焰鸡腿堡三件套",
+        "price": "26.9"
+      },
+      {
+        "code": "9900004835",
+        "name": "麦乐鸡套餐",
+        "price": "25"
+      },
+      {
+        "code": "510488",
+        "name": "燕麦奶",
+        "price": "21"
+      },
+      {
+        "code": "9900005462",
+        "name": "板烧鸡腿堡三件套",
+        "price": "34.5"
+      },
+      {
+        "code": "3755",
+        "name": "纯牛奶(盒装)",
+        "price": "10.5"
+      },
+      {
+        "code": "9900005464",
+        "name": "双层吉士汉堡套餐",
+        "price": "34"
+      },
+      {
+        "code": "9900004236",
+        "name": "人气超值四件套随心选",
+        "price": "29"
+      },
+      {
+        "code": "3757",
+        "name": "纯悦",
+        "price": "7.5"
+      },
+      {
+        "code": "9900005466",
+        "name": "巨无霸三件套",
+        "price": "36.5"
+      },
+      {
+        "code": "521914",
+        "name": "“葱不求人“按摩捶痒痒挠",
+        "price": "14.9"
+      },
+      {
+        "code": "6362",
+        "name": "100% 苹果汁(盒装)",
+        "price": "11.5"
+      },
+      {
+        "code": "9900000890",
+        "name": "板烧鸡腿堡四件套",
+        "price": "28"
+      },
+      {
+        "code": "9900015729",
+        "name": "蘸酱BFF四宫格小食盘",
+        "price": "43.8"
+      },
+      {
+        "code": "9900005449",
+        "name": "吉士汉堡包套餐",
+        "price": "26"
+      },
+      {
+        "code": "521797",
+        "name": "北美招牌牧场酱",
+        "price": "3"
+      },
+      {
+        "code": "9900011126",
+        "name": "酥脆无双套餐",
+        "price": "20"
+      },
+      {
+        "code": "521952",
+        "name": "龙焰鸡腿堡",
+        "price": "15.9"
+      },
+      {
+        "code": "521953",
+        "name": "龙焰芝士棒鸡腿堡",
+        "price": "27"
+      },
+      {
+        "code": "9900011128",
+        "name": "“堡”你欢乐套餐",
+        "price": "28"
+      },
+      {
+        "code": "3010",
+        "name": "雪碧",
+        "price": "9.5"
+      },
+      {
+        "code": "521316",
+        "name": "高达吉士双牛堡",
+        "price": "22.5"
+      },
+      {
+        "code": "521956",
+        "name": "麦当劳限定丝巾",
+        "price": "34.9"
+      },
+      {
+        "code": "521881",
+        "name": "马来咖喱风味薄皮肉骨鸡3块",
+        "price": "15.5"
+      },
+      {
+        "code": "9900000888",
+        "name": "巨无霸四件套",
+        "price": "32"
+      },
+      {
+        "code": "1100",
+        "name": "巨无霸",
+        "price": "25.5"
+      },
+      {
+        "code": "4810",
+        "name": "薯条",
+        "price": "13.5"
+      },
+      {
+        "code": "510479",
+        "name": "燕麦奶铁",
+        "price": "9.9"
+      },
+      {
+        "code": "9900005453",
+        "name": "麦香鸡套餐",
+        "price": "28"
+      },
+      {
+        "code": "507394",
+        "name": "牛奶",
+        "price": "19"
+      },
+      {
+        "code": "9900004066",
+        "name": "堡堡随心拼（7件任选）",
+        "price": "72.5"
+      },
+      {
+        "code": "521929",
+        "name": "旋旋水手帽",
+        "price": "48.8"
+      },
+      {
+        "code": "515520",
+        "name": "怡泉+C",
+        "price": "11.5"
+      },
+      {
+        "code": "1120",
+        "name": "双层吉士汉堡",
+        "price": "23"
+      },
+      {
+        "code": "521966",
+        "name": "韩式烟熏芝士风味酱",
+        "price": "3"
+      },
+      {
+        "code": "515280",
+        "name": "阳光柠檬红茶",
+        "price": "9.5"
+      },
+      {
+        "code": "9900016566",
+        "name": "心形薯饼8块",
+        "price": "22.5"
+      },
+      {
+        "code": "9900015159",
+        "name": "汉堡开心乐园餐",
+        "price": "23.5"
+      },
+      {
+        "code": "9900015165",
+        "name": "派",
+        "price": "8.5"
+      },
+      {
+        "code": "9900015164",
+        "name": "鸡肉堡单品精选",
+        "price": "23.5"
+      },
+      {
+        "code": "9900015162",
+        "name": "牛肉堡单品精选",
+        "price": "14"
+      },
+      {
+        "code": "507389",
+        "name": "浓缩咖啡",
+        "price": "15"
+      },
+      {
+        "code": "9900015160",
+        "name": "大堡口福三件套",
+        "price": "23.9"
+      },
+      {
+        "code": "507387",
+        "name": "卡布奇诺",
+        "price": "21"
+      },
+      {
+        "code": "9900008751",
+        "name": "可乐",
+        "price": "9.5"
+      },
+      {
+        "code": "515955",
+        "name": "浓浓燕麦黑巧（冰/热）",
+        "price": "23"
+      },
+      {
+        "code": "521815",
+        "name": "韩式甜辣酱鸡块",
+        "price": "15"
+      },
+      {
+        "code": "514782",
+        "name": "脆脆薯条",
+        "price": "16"
+      },
+      {
+        "code": "521817",
+        "name": "【美汁源】“多汁柠柠”",
+        "price": "12"
+      },
+      {
+        "code": "6102",
+        "name": "苹果片",
+        "price": "7"
+      },
+      {
+        "code": "1450",
+        "name": "麦香鸡",
+        "price": "17"
+      },
+      {
+        "code": "520445",
+        "name": "薄皮焦香V翅",
+        "price": "16"
+      },
+      {
+        "code": "521337",
+        "name": "鲜萃冰咖",
+        "price": "11.5"
+      },
+      {
+        "code": "520689",
+        "name": "鲜萃咖啡",
+        "price": "9.5"
+      },
+      {
+        "code": "507409",
+        "name": "麦咖啡™奶铁",
+        "price": "9.9"
+      },
+      {
+        "code": "3505",
+        "name": "锡兰红茶",
+        "price": "11.5"
+      },
+      {
+        "code": "1401",
+        "name": "麦乐鸡",
+        "price": "14"
+      },
+      {
+        "code": "507411",
+        "name": "麦咖啡™美式",
+        "price": "9.9"
+      },
+      {
+        "code": "9900016082",
+        "name": "心形薯饼5块",
+        "price": "14.5"
+      },
+      {
+        "code": "1406",
+        "name": "板烧鸡腿堡",
+        "price": "23.5"
+      },
+      {
+        "code": "9900005432",
+        "name": "麦麦脆汁鸡1块",
+        "price": "15"
+      },
+      {
+        "code": "515946",
+        "name": "浓浓黑巧（冰/热）",
+        "price": "21"
+      }
+    ]
+  }
+}
