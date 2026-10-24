@@ -140,7 +140,6 @@ mcd-diet-buddy/
 ├── CONTEST_DECLARATION.md    # 参赛声明（官方原文，一字未改）
 ├── MCP_INTEGRATION.md        # MCP 用了边啲 Tool、点解支撑「改造」
 ├── SKILL.md                  # WorkBuddy Skill 定义（同 skill/SKILL.md 一致）
-├── workbuddy.md              # 参赛公开文档
 ├── web/index.html            # 单文件体验网页（数据内联，构建产物）
 ├── deck/index.html           # 路演 Deck（12 页，键盘 ← → 翻页，封面有二维码）
 ├── skill/SKILL.md            # Skill 定义（同上，供安装用）
@@ -156,7 +155,6 @@ mcd-diet-buddy/
 
 - **[MCP_INTEGRATION.md](MCP_INTEGRATION.md)** —— 实际用咗边啲 MCP Tool、调用流程、业务价值，重点讲套餐结构接口点样支撑「改造」
 - **[SKILL.md](SKILL.md)** —— WorkBuddy Skill 定义（name / description / 工作流）
-- **[workbuddy.md](workbuddy.md)** —— 参赛公开提交文档
 - **[CONTEST_DECLARATION.md](CONTEST_DECLARATION.md)** —— 参赛声明（来源：官方仓库原样复制）
 - **[docs/使用说明.md](docs/使用说明.md)** —— 30 秒上手 + 三个功能逐个讲 + 数据严谨性（参赛提交嘅「使用说明」材料）
 - **[docs/录屏脚本.md](docs/录屏脚本.md)** —— 3 分钟演示录屏分镜与旁白（评分「展示」项用）

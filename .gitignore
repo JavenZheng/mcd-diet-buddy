@@ -27,5 +27,8 @@ tmp/
 # ===== 编辑器会话数据（非交付物） =====
 .workbuddy/
 
+# ===== 参赛提交专用（唔发布到 GitHub，只随参赛表单上传） =====
+workbuddy.md
+
 # ===== GitHub Pages 构建产物（Actions 自动生成） =====
 _site/
