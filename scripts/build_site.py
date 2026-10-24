@@ -58,10 +58,13 @@ def _dp(s):
     return float(m.group()) if m else 0.0
 
 MOD_MIN_SAVE = 15  # B级配料只保留省 >=15 卡嘅（省 5 卡嘅酸黄瓜唔列，免得开关太琐碎）
+# ⚠️ 呢个值必须同 transform_engine.py 嘅 MOD_MIN_SAVE 一致
+_EXPECT = []       # 收集每个套餐嘅引擎结果，落盘前做对账
 
 def combo_payload(c):
     r = TE.transform(c["name"])
     total = r["default"]["total_kcal"]
+    _EXPECT.append((c["name"], r))   # 留底，最后同引擎 summary 对账，防止两个口径再分叉
 
     # 每个「轮次」取最省的一项做开关（四件套有两个小食轮，各自独立可换 -> 两个开关）
     rkeys = []
@@ -123,6 +126,68 @@ COMBOS = [combo_payload(c) for c in COMBOS_J["combos"]]
 for c in COMBOS:
     c["after"] = c["total"] - c["best_save"]
     c["pct"] = round(c["best_save"] / c["total"] * 100, 1) if c["total"] else 0
+
+# ---------- 对账：网页开关口径 vs 引擎 summary 口径，必须一致 ----------
+# 以前两边各有一套算法（引擎计入全部去配料、四件套又会倒扣反向项），
+# 结果源码入面出现两个数字。而家每次 build 都会对一次账，唔一致就大声报错。
+if TE.MOD_MIN_SAVE != MOD_MIN_SAVE:
+    raise SystemExit(f"❌ MOD_MIN_SAVE 唔一致：build_site={MOD_MIN_SAVE} vs engine={TE.MOD_MIN_SAVE}")
+_byname = {c["name"]: c for c in COMBOS}
+_bad = []
+for nm, r in _EXPECT:
+    eng = round(r["summary"]["best_save"])
+    site = _byname[nm]["best_save"]
+    if eng != site:
+        _bad.append(f"  {nm}: 引擎 {eng} vs 网页 {site}（差 {eng - site}）")
+if _bad:
+    raise SystemExit("❌ 改造引擎同网页口径唔一致，修好再 build：\n" + "\n".join(_bad))
+print(f"对账通过：{len(_EXPECT)} 个套餐，引擎 summary 同网页开关口径完全一致")
+
+# ---------- 落盘 data/transform_runs.json（用同网页一样嘅 COMBOS payload）----------
+# ⚠️ 以前呢个档系 transform_engine.py 只跑 3 个套餐时写嘅，口径又同网页唔同，
+#    搞到源码入面出现两个数字（旧 438/省511 vs 网页 456/省493）。
+#    而家统一由呢度落盘，永远同网页一致；引擎 __main__ 只打印、唔再写档。
+def _write_transform_runs():
+    runs = []
+    for c in COMBOS:
+        runs.append({
+            "name": c["name"], "code": c["code"],
+            "before_kcal": c["total"], "after_kcal": c["after"],
+            "save_kcal": c["best_save"], "pct": c["pct"],
+            "price_diff": c["best_price"],
+            "n_switches": len(c["switches"]),
+            "switches": [{"lv": s["lv"], "label": s["label"], "save": s["save"],
+                          "price": s["price"], "from": s["from"], "to": s["to"]}
+                         for s in c["switches"]],
+            "tip_C": c["tip"], "tip_note": c["tip_note"],
+            "unmatched": c["unmatched"],
+            "default": {"main": c["main"], "side": c["side"], "drink": c["drink"]},
+        })
+    hero = next((c for c in COMBOS if c["name"] == "巨无霸三件套"), COMBOS[0])
+    mx = max(COMBOS, key=lambda c: c["best_save"])
+    out = {
+        "engine": "transform_engine（经 build_site.py 落盘，口径同网页完全一致）",
+        "note": ("口径：各轮取最省官方替换（A级） + 去配料只计省 >=%d 卡嘅（B级）；"
+                 "C级经验动作只做贴士、唔计入 best_save。以前引擎 __main__ 只跑 3 个套餐且"
+                 "计入全部去配料，会多出约 18 卡，同网页对唔上，已统一。" % MOD_MIN_SAVE),
+        "count": len(COMBOS),
+        "mod_min_save": MOD_MIN_SAVE,
+        "runs": runs,
+        "showcase": {"name": hero["name"], "code": hero["code"],
+                     "before_kcal": hero["total"], "after_kcal": hero["after"],
+                     "save_kcal": hero["best_save"], "pct": hero["pct"]},
+        "max_save": {"name": mx["name"], "code": mx["code"],
+                     "before_kcal": mx["total"], "after_kcal": mx["after"],
+                     "save_kcal": mx["best_save"], "pct": mx["pct"]},
+    }
+    p = os.path.join(BASE, "data", "transform_runs.json")
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+    print("落盘: data/transform_runs.json ｜ 门面 %s %d→%d（省 %d）｜最多 %s（省 %d）"
+          % (hero["name"], hero["total"], hero["after"], hero["best_save"],
+             mx["name"], mx["best_save"]))
+
+_write_transform_runs()
 
 # ---------- 转盘：8 个主食 × 3 档预算，预生成今日三餐（前端零计算）----------
 BUDGETS = [1200, 1500, 1800]

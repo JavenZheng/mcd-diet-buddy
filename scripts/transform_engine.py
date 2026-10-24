@@ -23,6 +23,11 @@ NUT = json.load(open(os.path.join(ROOT, "data", "nutrition.json"), encoding="utf
 COMBOS = json.load(open(os.path.join(ROOT, "data", "combos.json"), encoding="utf-8"))
 nut_by_name = {n["name"]: n for n in NUT}
 
+# B 级去配料只计入「省 >= 15 卡」嘅项，同网页开关口径一致
+# （省 5 卡嘅酸黄瓜唔会变成开关，免得开关太琐碎、亦唔好为咗凑数而虚增降幅）
+# ⚠️ 呢个值必须同 build_site.py 嘅 MOD_MIN_SAVE 一致，否则会出现两个数
+MOD_MIN_SAVE = 15
+
 # ---- 归一化 + 别名（与第四轮 menu_nutrition_map 对齐，并补套餐 choice 变体）----
 def norm(s: str) -> str:
     return s.replace("(", "（").replace(")", "）").replace(" ", "")
@@ -229,9 +234,15 @@ def transform(code_or_name):
     for a in actions:
         if a["type"] == "replace" and isinstance(a["kcal_diff"], (int, float)):
             grp[a.get("rnd_key", a["rnd"])].append(a["kcal_diff"])
-    best_replace = sum(max(v) for v in grp.values()) if grp else 0  # 各轮最省之和
+    # ⚠️ 每轮取「最省」嗰项，但如果嗰一轮所有替换都系反向（会多卡，例如四件套第二件小食
+    #    麦乐鸡4块换 V 翅反而多 22 卡），就保持默认唔换 —— 唔可以倒扣，否则四件套会少算 22 卡。
+    best_replace = sum(max(v + [0]) for v in grp.values()) if grp else 0  # 各轮最省之和（下限 0）
+    # 只计入「省 >= MOD_MIN_SAVE 卡」嘅去配料，同网页开关口径一致
+    modify_save_all = sum(a["kcal_diff"] for a in actions
+                          if a["type"] == "modify" and isinstance(a["kcal_diff"], (int, float)))
     modify_save = sum(a["kcal_diff"] for a in actions
-                      if a["type"] == "modify" and isinstance(a["kcal_diff"], (int, float)))
+                      if a["type"] == "modify" and isinstance(a["kcal_diff"], (int, float))
+                      and a["kcal_diff"] >= MOD_MIN_SAVE)
     exp_mid = sum((a["kcal_diff"][0] + a["kcal_diff"][1]) / 2 for a in actions
                   if a["type"] == "experience" and isinstance(a["kcal_diff"], tuple))
     best_save = best_replace + modify_save            # 确定性(A+B)最优总省
@@ -254,6 +265,7 @@ def transform(code_or_name):
         "unmatched": sorted(set(unmatched)),
         "summary": {
             "best_replace": round(best_replace, 1), "modify_save": round(modify_save, 1),
+            "modify_save_all": round(modify_save_all, 1),
             "best_save": round(best_save, 1), "after_ab": round(after_ab, 1), "ab_pct": ab_pct,
             "exp_mid": round(exp_mid, 1), "after_all": round(after_all, 1), "all_pct": all_pct,
         },
@@ -476,36 +488,43 @@ def transform_meal(main_name, side_name, drink_name):
 
 
 if __name__ == "__main__":
-    # 三类真实套餐：汉堡类 / 炸鸡类 / 鱼(早餐类在 combos.json 中不存在，以鱼替代)
-    targets = [
-        ("巨无霸三件套", "汉堡类"),
-        ("麦香鸡套餐", "炸鸡类（麦香鸡为炸鸡块）"),
-        ("麦香鱼套餐", "鱼类（combos.json 无早餐类套餐，以鱼替代展示）"),
-    ]
-    results = []
+    # 详细报告：三类真实套餐（汉堡 / 炸鸡 / 鱼；combos.json 无早餐类套餐，以鱼替代）
+    detail = {
+        "巨无霸三件套": "汉堡类",
+        "麦香鸡套餐": "炸鸡类（麦香鸡为炸鸡块）",
+        "麦香鱼套餐": "鱼类（combos.json 无早餐类套餐，以鱼替代展示）",
+    }
+    all_combos = COMBOS["combos"] if isinstance(COMBOS, dict) else COMBOS
     print("麦当劳减肥拍档 · 改造引擎实跑")
-    print("（combos.json 共 8 个热门套餐，均为正餐汉堡/鸡/鱼，无早餐类（麦满分）套餐）")
-    for name, kind in targets:
-        r = transform(name)
-        r["_kind"] = kind
+    print(f"（combos.json 共 {len(all_combos)} 个真实在售套餐，全部跑一遍）")
+
+    results = []
+    for c in all_combos:
+        r = transform(c["code"])
+        r["_kind"] = detail.get(c["name"], "")
         results.append(r)
+
+    for name in detail:                       # 详细报告只印 3 个，其余印汇总行
+        r = next(x for x in results if x["name"] == name)
         print(report(r))
 
-    # 门面案例：确定性省热量最大者
-    best = max(results, key=lambda r: r["summary"]["best_save"])
-    print("\n" + "#" * 60)
-    print(f"★ 门面案例（改造前后热量差最大）：{best['name']}（{best['_kind']}）")
-    print(f"  默认 {best['default']['total_kcal']} kcal → 确定性改造后 {best['summary']['after_ab']} kcal")
-    print(f"  省 {best['summary']['best_save']} 卡（降幅 {best['summary']['ab_pct']}%），数字均为实际算出")
-    print("#" * 60)
+    print("\n" + "─" * 68)
+    print("全部套餐汇总（口径：各轮最省官方替换 + 去配料只计省 >=%d 卡）" % MOD_MIN_SAVE)
+    for r in sorted(results, key=lambda x: -x["summary"]["best_save"]):
+        s = r["summary"]
+        print(f"  {r['name']:<22}{r['default']['total_kcal']:>5} → {round(s['after_ab']):>4} kcal"
+              f"　省 {round(s['best_save']):>3}（{s['ab_pct']}%）")
 
-    # 落盘结构化结果，供后续前端接入
-    out = {
-        "engine": "transform_engine",
-        "runs": results,
-        "showcase": {"name": best["name"], "code": best["code"], "save_kcal": best["summary"]["best_save"],
-                     "after_kcal": best["summary"]["after_ab"], "pct": best["summary"]["ab_pct"]},
-    }
-    with open(os.path.join(ROOT, "data", "transform_runs.json"), "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
-    print("\n结构化结果已落盘：data/transform_runs.json")
+    hero = next(r for r in results if r["name"] == "巨无霸三件套")   # 门面案例
+    mx = max(results, key=lambda r: r["summary"]["best_save"])       # 省热量最多
+    print("\n" + "#" * 68)
+    print(f"★ 门面案例（网页/Deck 采用）：{hero['name']}")
+    print(f"  默认 {hero['default']['total_kcal']} kcal → 确定性改造后 {round(hero['summary']['after_ab'])} kcal")
+    print(f"  省 {round(hero['summary']['best_save'])} 卡（降幅 {hero['summary']['ab_pct']}%）")
+    print(f"★ 省热量最多：{mx['name']}　省 {round(mx['summary']['best_save'])} 卡（降幅 {mx['summary']['ab_pct']}%）")
+    print("#" * 68)
+
+    # ⚠️ 唔再喺呢度落盘 data/transform_runs.json：
+    # 以前只跑 3 个套餐就写档，同网页（跑齐全量）口径又唔同，搞出两个数字。
+    # 而家统一由 build_site.py 用同一份 COMBOS payload 落盘，保证永远同网页一致。
+    print("\n结构化结果由 build_site.py 落盘（口径同网页一致）：data/transform_runs.json")

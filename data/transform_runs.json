@@ -1,933 +1,586 @@
 {
-  "engine": "transform_engine",
+  "engine": "transform_engine（经 build_site.py 落盘，口径同网页完全一致）",
+  "note": "口径：各轮取最省官方替换（A级） + 去配料只计省 >=15 卡嘅（B级）；C级经验动作只做贴士、唔计入 best_save。以前引擎 __main__ 只跑 3 个套餐且计入全部去配料，会多出约 18 卡，同网页对唔上，已统一。",
+  "count": 12,
+  "mod_min_save": 15,
   "runs": [
     {
       "name": "巨无霸三件套",
       "code": "9900005466",
+      "before_kcal": 949,
+      "after_kcal": 456,
+      "save_kcal": 493,
+      "pct": 51.9,
+      "price_diff": 0.5,
+      "n_switches": 3,
+      "switches": [
+        {
+          "lv": "A",
+          "label": "中薯条换小杯玉米杯",
+          "save": 236,
+          "price": 0.5,
+          "from": "中薯条 289kcal",
+          "to": "小杯玉米杯 53kcal"
+        },
+        {
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
+        },
+        {
+          "lv": "B",
+          "label": "去吉士、巨无霸酱",
+          "save": 110,
+          "price": 0.0,
+          "from": "巨无霸 513kcal",
+          "to": "已去掉上述配料"
+        }
+      ],
+      "tip_C": "只食馅唔食包，估算慳 80-130 卡",
+      "tip_note": "汉堡含面包含碳水，经验去包降热量",
+      "unmatched": [
+        "5块心形薯饼+韩式辣椒黄油风味酱",
+        "茉莉奶绿雪冰",
+        "马来咖喱风味薄皮肉骨鸡3块"
+      ],
       "default": {
         "main": "巨无霸 513kcal",
         "side": "中薯条 289kcal",
-        "drink": "可乐中杯 147kcal",
-        "total_kcal": 949
-      },
-      "actions": [
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换小杯玉米杯，慳 236 卡",
-          "before": "中薯条 289kcal",
-          "after": "小杯玉米杯 53kcal",
-          "kcal_diff": 236,
-          "price_diff": 0.5,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换大杯玉米杯，慳 202 卡",
-          "before": "中薯条 289kcal",
-          "after": "大杯玉米杯 87kcal",
-          "kcal_diff": 202,
-          "price_diff": 2.5,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换无糖可口可乐中杯，慳 147 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "无糖可口可乐中杯 0kcal",
-          "kcal_diff": 147,
-          "price_diff": 0.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换无糖可口可乐大杯，慳 147 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "无糖可口可乐大杯 0kcal",
-          "kcal_diff": 147,
-          "price_diff": 2.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换锡兰红茶，慳 145 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "锡兰红茶 2kcal",
-          "kcal_diff": 145,
-          "price_diff": 1.5,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™冰美式中杯，慳 134 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™冰美式中杯 13kcal",
-          "kcal_diff": 134,
-          "price_diff": 9.0,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换大杯鲜萃咖啡，慳 134 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "大杯鲜萃咖啡 13kcal",
-          "kcal_diff": 134,
-          "price_diff": 1.5,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™热美式中杯，慳 134 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™热美式中杯 13kcal",
-          "kcal_diff": 134,
-          "price_diff": 9.0,
-          "match": "alias"
-        },
-        {
-          "type": "experience",
-          "level": "C",
-          "rnd": "exp",
-          "title": "只食馅唔食包，估算慳 80-130 卡",
-          "before": "巨无霸原食法",
-          "after": "巨无霸经验改造",
-          "kcal_diff": [
-            80,
-            130
-          ],
-          "price_diff": 0.0,
-          "match": "experience",
-          "note": "汉堡含面包含碳水，经验去包降热量"
-        },
-        {
-          "type": "modify",
-          "level": "B",
-          "rnd": "main",
-          "title": "去吉士，慳约 60 卡（B级估算）",
-          "before": "巨无霸含吉士",
-          "after": "巨无霸去吉士",
-          "kcal_diff": 60,
-          "price_diff": 0.0,
-          "match": "official-action"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换100%苹果汁，慳 59 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "100%苹果汁 88kcal",
-          "kcal_diff": 59,
-          "price_diff": 1.5,
-          "match": "exact"
-        },
-        {
-          "type": "modify",
-          "level": "B",
-          "rnd": "main",
-          "title": "去巨无霸酱，慳约 50 卡（B级估算）",
-          "before": "巨无霸含巨无霸酱",
-          "after": "巨无霸去巨无霸酱",
-          "kcal_diff": 50,
-          "price_diff": 0.0,
-          "match": "official-action"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换雪碧中杯，慳 42 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "雪碧中杯 105kcal",
-          "kcal_diff": 42,
-          "price_diff": 0.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换冰浓浓燕麦黑巧中杯，慳 27 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "冰浓浓燕麦黑巧中杯 120kcal",
-          "kcal_diff": 27,
-          "price_diff": 13.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换纯牛奶，慳 18 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "纯牛奶 129kcal",
-          "kcal_diff": 18,
-          "price_diff": 0.5,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换冰浓浓黑巧中杯，慳 12 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "冰浓浓黑巧中杯 135kcal",
-          "kcal_diff": 12,
-          "price_diff": 11.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换脆脆薯条，慳 10 卡",
-          "before": "中薯条 289kcal",
-          "after": "脆脆薯条 279kcal",
-          "kcal_diff": 10,
-          "price_diff": 2.5,
-          "match": "exact"
-        },
-        {
-          "type": "modify",
-          "level": "B",
-          "rnd": "main",
-          "title": "去生菜，慳约 8 卡（B级估算）",
-          "before": "巨无霸含生菜",
-          "after": "巨无霸去生菜",
-          "kcal_diff": 8,
-          "price_diff": 0.0,
-          "match": "official-action"
-        },
-        {
-          "type": "modify",
-          "level": "B",
-          "rnd": "main",
-          "title": "去酸黄瓜，慳约 5 卡（B级估算）",
-          "before": "巨无霸含酸黄瓜",
-          "after": "巨无霸去酸黄瓜",
-          "kcal_diff": 5,
-          "price_diff": 0.0,
-          "match": "official-action"
-        },
-        {
-          "type": "modify",
-          "level": "B",
-          "rnd": "main",
-          "title": "去洋葱粒，慳约 5 卡（B级估算）",
-          "before": "巨无霸含洋葱粒",
-          "after": "巨无霸去洋葱粒",
-          "kcal_diff": 5,
-          "price_diff": 0.0,
-          "match": "official-action"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™冰奶铁中杯（反向·多 1 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™冰奶铁中杯 148kcal",
-          "kcal_diff": -1,
-          "price_diff": 11.0,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换热浓浓燕麦黑巧中杯（反向·多 10 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "热浓浓燕麦黑巧中杯 157kcal",
-          "kcal_diff": -10,
-          "price_diff": 13.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换雪碧大杯（反向·多 13 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "雪碧大杯 160kcal",
-          "kcal_diff": -13,
-          "price_diff": 2.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换热浓浓黑巧中杯（反向·多 29 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "热浓浓黑巧中杯 176kcal",
-          "kcal_diff": -29,
-          "price_diff": 11.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™热奶铁中杯（反向·多 39 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™热奶铁中杯 186kcal",
-          "kcal_diff": -39,
-          "price_diff": 11.0,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换可乐大杯（反向·多 77 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "可乐大杯 224kcal",
-          "kcal_diff": -77,
-          "price_diff": 2.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换大薯条（反向·多 90 卡，唔推荐）",
-          "before": "中薯条 289kcal",
-          "after": "大薯条 379kcal",
-          "kcal_diff": -90,
-          "price_diff": 2.5,
-          "match": "exact"
-        }
-      ],
-      "unmatched": [
-        "5块心形薯饼+韩式辣椒黄油风味酱",
-        "茉莉奶绿雪冰",
-        "马来咖喱风味薄皮肉骨鸡3块"
-      ],
-      "summary": {
-        "best_replace": 383,
-        "modify_save": 128,
-        "best_save": 511,
-        "after_ab": 438,
-        "ab_pct": 53.8,
-        "exp_mid": 105.0,
-        "after_all": 333.0,
-        "all_pct": 64.9
-      },
-      "_kind": "汉堡类"
+        "drink": "可乐中杯 147kcal"
+      }
     },
     {
-      "name": "麦香鸡套餐",
-      "code": "9900005453",
-      "default": {
-        "main": "麦香鸡 369kcal",
-        "side": "中薯条 289kcal",
-        "drink": "可乐中杯 147kcal",
-        "total_kcal": 805
-      },
-      "actions": [
+      "name": "麦辣鸡腿汉堡三件套",
+      "code": "9900005456",
+      "before_kcal": 921,
+      "after_kcal": 498,
+      "save_kcal": 423,
+      "pct": 45.9,
+      "price_diff": 0.5,
+      "n_switches": 3,
+      "switches": [
         {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换小杯玉米杯，慳 236 卡",
-          "before": "中薯条 289kcal",
-          "after": "小杯玉米杯 53kcal",
-          "kcal_diff": 236,
-          "price_diff": 0.5,
-          "match": "exact"
+          "lv": "A",
+          "label": "中薯条换小杯玉米杯",
+          "save": 236,
+          "price": 0.5,
+          "from": "中薯条 289kcal",
+          "to": "小杯玉米杯 53kcal"
         },
         {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换大杯玉米杯，慳 202 卡",
-          "before": "中薯条 289kcal",
-          "after": "大杯玉米杯 87kcal",
-          "kcal_diff": 202,
-          "price_diff": 2.5,
-          "match": "exact"
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
         },
         {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换无糖可口可乐中杯，慳 147 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "无糖可口可乐中杯 0kcal",
-          "kcal_diff": 147,
-          "price_diff": 0.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换无糖可口可乐大杯，慳 147 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "无糖可口可乐大杯 0kcal",
-          "kcal_diff": 147,
-          "price_diff": 2.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换锡兰红茶，慳 145 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "锡兰红茶 2kcal",
-          "kcal_diff": 145,
-          "price_diff": 1.5,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™冰美式中杯，慳 134 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™冰美式中杯 13kcal",
-          "kcal_diff": 134,
-          "price_diff": 9.0,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换大杯鲜萃咖啡，慳 134 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "大杯鲜萃咖啡 13kcal",
-          "kcal_diff": 134,
-          "price_diff": 1.5,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™热美式中杯，慳 134 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™热美式中杯 13kcal",
-          "kcal_diff": 134,
-          "price_diff": 9.0,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换100%苹果汁，慳 59 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "100%苹果汁 88kcal",
-          "kcal_diff": 59,
-          "price_diff": 1.5,
-          "match": "exact"
-        },
-        {
-          "type": "experience",
-          "level": "C",
-          "rnd": "exp",
-          "title": "去鸡皮／沥油食法，估算慳 30-60 卡",
-          "before": "麦香鸡原食法",
-          "after": "麦香鸡经验改造",
-          "kcal_diff": [
-            30,
-            60
-          ],
-          "price_diff": 0.0,
-          "match": "experience",
-          "note": "炸鸡经验去鸡皮降脂"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换雪碧中杯，慳 42 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "雪碧中杯 105kcal",
-          "kcal_diff": 42,
-          "price_diff": 0.0,
-          "match": "exact"
-        },
-        {
-          "type": "modify",
-          "level": "B",
-          "rnd": "main",
-          "title": "去麦香鸡酱，慳约 40 卡（B级估算）",
-          "before": "麦香鸡含麦香鸡酱",
-          "after": "麦香鸡去麦香鸡酱",
-          "kcal_diff": 40,
-          "price_diff": 0.0,
-          "match": "official-action"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换冰浓浓燕麦黑巧中杯，慳 27 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "冰浓浓燕麦黑巧中杯 120kcal",
-          "kcal_diff": 27,
-          "price_diff": 13.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换纯牛奶，慳 18 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "纯牛奶 129kcal",
-          "kcal_diff": 18,
-          "price_diff": 0.5,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换冰浓浓黑巧中杯，慳 12 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "冰浓浓黑巧中杯 135kcal",
-          "kcal_diff": 12,
-          "price_diff": 11.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换脆脆薯条，慳 10 卡",
-          "before": "中薯条 289kcal",
-          "after": "脆脆薯条 279kcal",
-          "kcal_diff": 10,
-          "price_diff": 2.5,
-          "match": "exact"
-        },
-        {
-          "type": "modify",
-          "level": "B",
-          "rnd": "main",
-          "title": "去生菜，慳约 8 卡（B级估算）",
-          "before": "麦香鸡含生菜",
-          "after": "麦香鸡去生菜",
-          "kcal_diff": 8,
-          "price_diff": 0.0,
-          "match": "official-action"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™冰奶铁中杯（反向·多 1 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™冰奶铁中杯 148kcal",
-          "kcal_diff": -1,
-          "price_diff": 11.0,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换热浓浓燕麦黑巧中杯（反向·多 10 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "热浓浓燕麦黑巧中杯 157kcal",
-          "kcal_diff": -10,
-          "price_diff": 13.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换雪碧大杯（反向·多 13 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "雪碧大杯 160kcal",
-          "kcal_diff": -13,
-          "price_diff": 2.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换热浓浓黑巧中杯（反向·多 29 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "热浓浓黑巧中杯 176kcal",
-          "kcal_diff": -29,
-          "price_diff": 11.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™热奶铁中杯（反向·多 39 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™热奶铁中杯 186kcal",
-          "kcal_diff": -39,
-          "price_diff": 11.0,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换可乐大杯（反向·多 77 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "可乐大杯 224kcal",
-          "kcal_diff": -77,
-          "price_diff": 2.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换大薯条（反向·多 90 卡，唔推荐）",
-          "before": "中薯条 289kcal",
-          "after": "大薯条 379kcal",
-          "kcal_diff": -90,
-          "price_diff": 2.5,
-          "match": "exact"
+          "lv": "B",
+          "label": "去麦香鸡酱",
+          "save": 40,
+          "price": 0.0,
+          "from": "麦辣鸡腿汉堡 485kcal",
+          "to": "已去掉上述配料"
         }
       ],
+      "tip_C": "去鸡皮／沥油食法，估算慳 30-60 卡",
+      "tip_note": "炸鸡经验去鸡皮降脂",
       "unmatched": [
         "5块心形薯饼+韩式辣椒黄油风味酱",
         "茉莉奶绿雪冰",
         "马来咖喱风味薄皮肉骨鸡3块"
       ],
-      "summary": {
-        "best_replace": 383,
-        "modify_save": 48,
-        "best_save": 431,
-        "after_ab": 374,
-        "ab_pct": 53.5,
-        "exp_mid": 45.0,
-        "after_all": 329.0,
-        "all_pct": 59.1
-      },
-      "_kind": "炸鸡类（麦香鸡为炸鸡块）"
+      "default": {
+        "main": "麦辣鸡腿汉堡 485kcal",
+        "side": "中薯条 289kcal",
+        "drink": "可乐中杯 147kcal"
+      }
+    },
+    {
+      "name": "板烧鸡腿堡三件套",
+      "code": "9900005462",
+      "before_kcal": 827,
+      "after_kcal": 409,
+      "save_kcal": 418,
+      "pct": 50.5,
+      "price_diff": 0.5,
+      "n_switches": 3,
+      "switches": [
+        {
+          "lv": "A",
+          "label": "中薯条换小杯玉米杯",
+          "save": 236,
+          "price": 0.5,
+          "from": "中薯条 289kcal",
+          "to": "小杯玉米杯 53kcal"
+        },
+        {
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
+        },
+        {
+          "lv": "B",
+          "label": "去烤味酱",
+          "save": 35,
+          "price": 0.0,
+          "from": "板烧鸡腿堡 391kcal",
+          "to": "已去掉上述配料"
+        }
+      ],
+      "tip_C": "去鸡皮／沥油食法，估算慳 30-60 卡",
+      "tip_note": "炸鸡经验去鸡皮降脂",
+      "unmatched": [
+        "5块心形薯饼+韩式辣椒黄油风味酱",
+        "茉莉奶绿雪冰",
+        "马来咖喱风味薄皮肉骨鸡3块"
+      ],
+      "default": {
+        "main": "板烧鸡腿堡 391kcal",
+        "side": "中薯条 289kcal",
+        "drink": "可乐中杯 147kcal"
+      }
     },
     {
       "name": "麦香鱼套餐",
       "code": "9900005460",
-      "default": {
-        "main": "麦香鱼 325kcal",
-        "side": "中薯条 289kcal",
-        "drink": "可乐中杯 147kcal",
-        "total_kcal": 761
-      },
-      "actions": [
+      "before_kcal": 761,
+      "after_kcal": 258,
+      "save_kcal": 503,
+      "pct": 66.1,
+      "price_diff": 0.5,
+      "n_switches": 3,
+      "switches": [
         {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换小杯玉米杯，慳 236 卡",
-          "before": "中薯条 289kcal",
-          "after": "小杯玉米杯 53kcal",
-          "kcal_diff": 236,
-          "price_diff": 0.5,
-          "match": "exact"
+          "lv": "A",
+          "label": "中薯条换小杯玉米杯",
+          "save": 236,
+          "price": 0.5,
+          "from": "中薯条 289kcal",
+          "to": "小杯玉米杯 53kcal"
         },
         {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换大杯玉米杯，慳 202 卡",
-          "before": "中薯条 289kcal",
-          "after": "大杯玉米杯 87kcal",
-          "kcal_diff": 202,
-          "price_diff": 2.5,
-          "match": "exact"
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
         },
         {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换无糖可口可乐中杯，慳 147 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "无糖可口可乐中杯 0kcal",
-          "kcal_diff": 147,
-          "price_diff": 0.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换无糖可口可乐大杯，慳 147 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "无糖可口可乐大杯 0kcal",
-          "kcal_diff": 147,
-          "price_diff": 2.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换锡兰红茶，慳 145 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "锡兰红茶 2kcal",
-          "kcal_diff": 145,
-          "price_diff": 1.5,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™冰美式中杯，慳 134 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™冰美式中杯 13kcal",
-          "kcal_diff": 134,
-          "price_diff": 9.0,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换大杯鲜萃咖啡，慳 134 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "大杯鲜萃咖啡 13kcal",
-          "kcal_diff": 134,
-          "price_diff": 1.5,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™热美式中杯，慳 134 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™热美式中杯 13kcal",
-          "kcal_diff": 134,
-          "price_diff": 9.0,
-          "match": "alias"
-        },
-        {
-          "type": "experience",
-          "level": "C",
-          "rnd": "exp",
-          "title": "只食鱼唔食包，估算慳 90-130 卡",
-          "before": "麦香鱼原食法",
-          "after": "麦香鱼经验改造",
-          "kcal_diff": [
-            90,
-            130
-          ],
-          "price_diff": 0.0,
-          "match": "experience",
-          "note": "鱼堡含面包含碳水，经验去包降热量"
-        },
-        {
-          "type": "modify",
-          "level": "B",
-          "rnd": "main",
-          "title": "去麦香鱼酱，慳约 60 卡（B级估算）",
-          "before": "麦香鱼含麦香鱼酱",
-          "after": "麦香鱼去麦香鱼酱",
-          "kcal_diff": 60,
-          "price_diff": 0.0,
-          "match": "official-action"
-        },
-        {
-          "type": "modify",
-          "level": "B",
-          "rnd": "main",
-          "title": "去吉士，慳约 60 卡（B级估算）",
-          "before": "麦香鱼含吉士",
-          "after": "麦香鱼去吉士",
-          "kcal_diff": 60,
-          "price_diff": 0.0,
-          "match": "official-action"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换100%苹果汁，慳 59 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "100%苹果汁 88kcal",
-          "kcal_diff": 59,
-          "price_diff": 1.5,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换雪碧中杯，慳 42 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "雪碧中杯 105kcal",
-          "kcal_diff": 42,
-          "price_diff": 0.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换冰浓浓燕麦黑巧中杯，慳 27 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "冰浓浓燕麦黑巧中杯 120kcal",
-          "kcal_diff": 27,
-          "price_diff": 13.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换纯牛奶，慳 18 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "纯牛奶 129kcal",
-          "kcal_diff": 18,
-          "price_diff": 0.5,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换冰浓浓黑巧中杯，慳 12 卡",
-          "before": "可乐中杯 147kcal",
-          "after": "冰浓浓黑巧中杯 135kcal",
-          "kcal_diff": 12,
-          "price_diff": 11.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换脆脆薯条，慳 10 卡",
-          "before": "中薯条 289kcal",
-          "after": "脆脆薯条 279kcal",
-          "kcal_diff": 10,
-          "price_diff": 2.5,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™冰奶铁中杯（反向·多 1 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™冰奶铁中杯 148kcal",
-          "kcal_diff": -1,
-          "price_diff": 11.0,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换热浓浓燕麦黑巧中杯（反向·多 10 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "热浓浓燕麦黑巧中杯 157kcal",
-          "kcal_diff": -10,
-          "price_diff": 13.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换雪碧大杯（反向·多 13 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "雪碧大杯 160kcal",
-          "kcal_diff": -13,
-          "price_diff": 2.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换热浓浓黑巧中杯（反向·多 29 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "热浓浓黑巧中杯 176kcal",
-          "kcal_diff": -29,
-          "price_diff": 11.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换麦咖啡™热奶铁中杯（反向·多 39 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "麦咖啡™热奶铁中杯 186kcal",
-          "kcal_diff": -39,
-          "price_diff": 11.0,
-          "match": "alias"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "饮料",
-          "title": "可乐中杯换可乐大杯（反向·多 77 卡，唔推荐）",
-          "before": "可乐中杯 147kcal",
-          "after": "可乐大杯 224kcal",
-          "kcal_diff": -77,
-          "price_diff": 2.0,
-          "match": "exact"
-        },
-        {
-          "type": "replace",
-          "level": "A",
-          "rnd": "小食",
-          "title": "中薯条换大薯条（反向·多 90 卡，唔推荐）",
-          "before": "中薯条 289kcal",
-          "after": "大薯条 379kcal",
-          "kcal_diff": -90,
-          "price_diff": 2.5,
-          "match": "exact"
+          "lv": "B",
+          "label": "去麦香鱼酱、吉士",
+          "save": 120,
+          "price": 0.0,
+          "from": "麦香鱼 325kcal",
+          "to": "已去掉上述配料"
         }
       ],
+      "tip_C": "只食鱼唔食包，估算慳 90-130 卡",
+      "tip_note": "鱼堡含面包含碳水，经验去包降热量",
       "unmatched": [
         "5块心形薯饼+韩式辣椒黄油风味酱",
         "茉莉奶绿雪冰",
         "马来咖喱风味薄皮肉骨鸡3块"
       ],
-      "summary": {
-        "best_replace": 383,
-        "modify_save": 120,
-        "best_save": 503,
-        "after_ab": 258,
-        "ab_pct": 66.1,
-        "exp_mid": 110.0,
-        "after_all": 148.0,
-        "all_pct": 80.6
-      },
-      "_kind": "鱼类（combos.json 无早餐类套餐，以鱼替代展示）"
+      "default": {
+        "main": "麦香鱼 325kcal",
+        "side": "中薯条 289kcal",
+        "drink": "可乐中杯 147kcal"
+      }
+    },
+    {
+      "name": "吉士汉堡包套餐",
+      "code": "9900005449",
+      "before_kcal": 730,
+      "after_kcal": 312,
+      "save_kcal": 418,
+      "pct": 57.3,
+      "price_diff": 0.5,
+      "n_switches": 3,
+      "switches": [
+        {
+          "lv": "A",
+          "label": "中薯条换小杯玉米杯",
+          "save": 236,
+          "price": 0.5,
+          "from": "中薯条 289kcal",
+          "to": "小杯玉米杯 53kcal"
+        },
+        {
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
+        },
+        {
+          "lv": "B",
+          "label": "去番茄酱、芥末酱",
+          "save": 35,
+          "price": 0.0,
+          "from": "吉士汉堡包 294kcal",
+          "to": "已去掉上述配料"
+        }
+      ],
+      "tip_C": "只食馅唔食包，估算慳 80-130 卡",
+      "tip_note": "汉堡含面包含碳水，经验去包降热量",
+      "unmatched": [
+        "5块心形薯饼+韩式辣椒黄油风味酱",
+        "茉莉奶绿雪冰",
+        "马来咖喱风味薄皮肉骨鸡3块"
+      ],
+      "default": {
+        "main": "吉士汉堡包 294kcal",
+        "side": "中薯条 289kcal",
+        "drink": "可乐中杯 147kcal"
+      }
+    },
+    {
+      "name": "双层吉士汉堡套餐",
+      "code": "9900005464",
+      "before_kcal": 865,
+      "after_kcal": 387,
+      "save_kcal": 478,
+      "pct": 55.3,
+      "price_diff": 0.5,
+      "n_switches": 3,
+      "switches": [
+        {
+          "lv": "A",
+          "label": "中薯条换小杯玉米杯",
+          "save": 236,
+          "price": 0.5,
+          "from": "中薯条 289kcal",
+          "to": "小杯玉米杯 53kcal"
+        },
+        {
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
+        },
+        {
+          "lv": "B",
+          "label": "去吉士、番茄酱、芥末酱",
+          "save": 95,
+          "price": 0.0,
+          "from": "双层吉士汉堡 429kcal",
+          "to": "已去掉上述配料"
+        }
+      ],
+      "tip_C": "只食馅唔食包，估算慳 80-130 卡",
+      "tip_note": "汉堡含面包含碳水，经验去包降热量",
+      "unmatched": [
+        "5块心形薯饼+韩式辣椒黄油风味酱",
+        "茉莉奶绿雪冰",
+        "马来咖喱风味薄皮肉骨鸡3块"
+      ],
+      "default": {
+        "main": "双层吉士汉堡 429kcal",
+        "side": "中薯条 289kcal",
+        "drink": "可乐中杯 147kcal"
+      }
+    },
+    {
+      "name": "不素之霸双层牛堡三件套",
+      "code": "9900005411",
+      "before_kcal": 929,
+      "after_kcal": 506,
+      "save_kcal": 423,
+      "pct": 45.5,
+      "price_diff": 0.5,
+      "n_switches": 3,
+      "switches": [
+        {
+          "lv": "A",
+          "label": "中薯条换小杯玉米杯",
+          "save": 236,
+          "price": 0.5,
+          "from": "中薯条 289kcal",
+          "to": "小杯玉米杯 53kcal"
+        },
+        {
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
+        },
+        {
+          "lv": "B",
+          "label": "去芥末沙拉酱",
+          "save": 40,
+          "price": 0.0,
+          "from": "不素之霸双层牛堡 493kcal",
+          "to": "已去掉上述配料"
+        }
+      ],
+      "tip_C": "只食馅唔食包，估算慳 80-130 卡",
+      "tip_note": "汉堡含面包含碳水，经验去包降热量",
+      "unmatched": [
+        "5块心形薯饼+韩式辣椒黄油风味酱",
+        "茉莉奶绿雪冰",
+        "马来咖喱风味薄皮肉骨鸡3块"
+      ],
+      "default": {
+        "main": "不素之霸双层牛堡 493kcal",
+        "side": "中薯条 289kcal",
+        "drink": "可乐中杯 147kcal"
+      }
+    },
+    {
+      "name": "麦香鸡套餐",
+      "code": "9900005453",
+      "before_kcal": 805,
+      "after_kcal": 382,
+      "save_kcal": 423,
+      "pct": 52.5,
+      "price_diff": 0.5,
+      "n_switches": 3,
+      "switches": [
+        {
+          "lv": "A",
+          "label": "中薯条换小杯玉米杯",
+          "save": 236,
+          "price": 0.5,
+          "from": "中薯条 289kcal",
+          "to": "小杯玉米杯 53kcal"
+        },
+        {
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
+        },
+        {
+          "lv": "B",
+          "label": "去麦香鸡酱",
+          "save": 40,
+          "price": 0.0,
+          "from": "麦香鸡 369kcal",
+          "to": "已去掉上述配料"
+        }
+      ],
+      "tip_C": "去鸡皮／沥油食法，估算慳 30-60 卡",
+      "tip_note": "炸鸡经验去鸡皮降脂",
+      "unmatched": [
+        "5块心形薯饼+韩式辣椒黄油风味酱",
+        "茉莉奶绿雪冰",
+        "马来咖喱风味薄皮肉骨鸡3块"
+      ],
+      "default": {
+        "main": "麦香鸡 369kcal",
+        "side": "中薯条 289kcal",
+        "drink": "可乐中杯 147kcal"
+      }
+    },
+    {
+      "name": "巨无霸四件套",
+      "code": "9900000888",
+      "before_kcal": 1119,
+      "after_kcal": 839,
+      "save_kcal": 280,
+      "pct": 25.0,
+      "price_diff": 2.0,
+      "n_switches": 3,
+      "switches": [
+        {
+          "lv": "A",
+          "label": "中薯条换奥利奥麦旋风",
+          "save": 23,
+          "price": 2.0,
+          "from": "中薯条 289kcal",
+          "to": "奥利奥麦旋风 266kcal"
+        },
+        {
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
+        },
+        {
+          "lv": "B",
+          "label": "去吉士、巨无霸酱",
+          "save": 110,
+          "price": 0.0,
+          "from": "巨无霸 513kcal",
+          "to": "已去掉上述配料"
+        }
+      ],
+      "tip_C": "只食馅唔食包，估算慳 80-130 卡",
+      "tip_note": "汉堡含面包含碳水，经验去包降热量",
+      "unmatched": [
+        "4个韩式甜辣酱鸡球（山葵酱）",
+        "可乐麦炫酷",
+        "怡泉+C麦炫酷",
+        "无糖可乐麦炫酷",
+        "泷愿成真麦旋风——大米风味",
+        "茉莉奶绿雪冰",
+        "蓝莓爆爆珠麦旋风",
+        "雪碧麦炫酷",
+        "韩式烟熏芝士风味酱甜辣酱鸡球",
+        "韩式烟熏芝士风味酱麦麦脆汁鸡-腿",
+        "韩式甜辣酱鸡块",
+        "马来咖喱风味薄皮肉骨鸡3块",
+        "马苏里拉拉丝芝士条",
+        "鲜萃冰咖",
+        "麦辣鸡翅2块"
+      ],
+      "default": {
+        "main": "巨无霸 513kcal",
+        "side": "中薯条 289kcal + 麦乐鸡4块 170kcal",
+        "drink": "可乐中杯 147kcal"
+      }
+    },
+    {
+      "name": "板烧鸡腿堡四件套",
+      "code": "9900000890",
+      "before_kcal": 997,
+      "after_kcal": 792,
+      "save_kcal": 205,
+      "pct": 20.6,
+      "price_diff": 2.0,
+      "n_switches": 3,
+      "switches": [
+        {
+          "lv": "A",
+          "label": "中薯条换奥利奥麦旋风",
+          "save": 23,
+          "price": 2.0,
+          "from": "中薯条 289kcal",
+          "to": "奥利奥麦旋风 266kcal"
+        },
+        {
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
+        },
+        {
+          "lv": "B",
+          "label": "去烤味酱",
+          "save": 35,
+          "price": 0.0,
+          "from": "板烧鸡腿堡 391kcal",
+          "to": "已去掉上述配料"
+        }
+      ],
+      "tip_C": "去鸡皮／沥油食法，估算慳 30-60 卡",
+      "tip_note": "炸鸡经验去鸡皮降脂",
+      "unmatched": [
+        "4个韩式甜辣酱鸡球（山葵酱）",
+        "可乐麦炫酷",
+        "怡泉+C麦炫酷",
+        "无糖可乐麦炫酷",
+        "泷愿成真麦旋风——大米风味",
+        "茉莉奶绿雪冰",
+        "蓝莓爆爆珠麦旋风",
+        "雪碧麦炫酷",
+        "韩式烟熏芝士风味酱甜辣酱鸡球",
+        "韩式烟熏芝士风味酱麦麦脆汁鸡-腿",
+        "韩式甜辣酱鸡块",
+        "马来咖喱风味薄皮肉骨鸡3块",
+        "马苏里拉拉丝芝士条",
+        "鲜萃冰咖",
+        "麦辣鸡翅2块"
+      ],
+      "default": {
+        "main": "板烧鸡腿堡 391kcal",
+        "side": "中薯条 289kcal + 麦乐鸡4块 170kcal",
+        "drink": "可乐中杯 147kcal"
+      }
+    },
+    {
+      "name": "酥脆无双套餐",
+      "code": "9900011126",
+      "before_kcal": 434,
+      "after_kcal": 434,
+      "save_kcal": 0,
+      "pct": 0.0,
+      "price_diff": 0,
+      "n_switches": 0,
+      "switches": [],
+      "tip_C": "去鸡皮／沥油食法，估算慳 30-60 卡",
+      "tip_note": "炸鸡经验去鸡皮降脂",
+      "unmatched": [],
+      "default": {
+        "main": "麦麦脆汁鸡-琵琶腿 328kcal",
+        "side": "迷你薯条 106kcal",
+        "drink": "无糖可口可乐中杯 0kcal"
+      }
+    },
+    {
+      "name": "麦乐鸡经典中套餐",
+      "code": "9900004835",
+      "before_kcal": 649,
+      "after_kcal": 492,
+      "save_kcal": 157,
+      "pct": 24.2,
+      "price_diff": 2.5,
+      "n_switches": 2,
+      "switches": [
+        {
+          "lv": "A",
+          "label": "中薯条换脆脆薯条",
+          "save": 10,
+          "price": 2.5,
+          "from": "中薯条 289kcal",
+          "to": "脆脆薯条 279kcal"
+        },
+        {
+          "lv": "A",
+          "label": "可乐中杯换无糖可口可乐中杯",
+          "save": 147,
+          "price": 0.0,
+          "from": "可乐中杯 147kcal",
+          "to": "无糖可口可乐中杯 0kcal"
+        }
+      ],
+      "tip_C": "去鸡皮／沥油食法，估算慳 30-60 卡",
+      "tip_note": "炸鸡经验去鸡皮降脂",
+      "unmatched": [
+        "茉莉奶绿雪冰",
+        "马来咖喱风味薄皮肉骨鸡3块"
+      ],
+      "default": {
+        "main": "麦乐鸡5块 213kcal",
+        "side": "中薯条 289kcal",
+        "drink": "可乐中杯 147kcal"
+      }
     }
   ],
   "showcase": {
     "name": "巨无霸三件套",
     "code": "9900005466",
-    "save_kcal": 511,
-    "after_kcal": 438,
-    "pct": 53.8
+    "before_kcal": 949,
+    "after_kcal": 456,
+    "save_kcal": 493,
+    "pct": 51.9
+  },
+  "max_save": {
+    "name": "麦香鱼套餐",
+    "code": "9900005460",
+    "before_kcal": 761,
+    "after_kcal": 258,
+    "save_kcal": 503,
+    "pct": 66.1
   }
 }
