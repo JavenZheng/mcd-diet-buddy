@@ -2,6 +2,9 @@
 
 > 麦当劳减肥拍档正式上线啦！只需要使用「麦当劳减肥拍档」，帮你规划好怎么样吃麦当劳能够符合减肥期间的要求，换一种吃法，就可以食得有营养又健康，快D来试下啦！
 
+**在线体验（点开即用，唔使装嘢）：https://javenzheng.github.io/mcd-diet-buddy/**
+仓库：https://github.com/JavenZheng/mcd-diet-buddy
+
 ## 定位
 减脂期想食麦当劳，唔使戒口，换一种吃法就得。
 
