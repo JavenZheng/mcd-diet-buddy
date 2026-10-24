@@ -3,6 +3,7 @@
 > 麦当劳减肥拍档正式上线啦！只需要使用「麦当劳减肥拍档」，帮你规划好怎么样吃麦当劳能够符合减肥期间的要求，换一种吃法，就可以食得有营养又健康，快D来试下啦！
 
 **在线体验（点开即用，唔使装嘢）：https://javenzheng.github.io/mcd-diet-buddy/**
+**路演 Deck（12 页，键盘 ← → 翻页）：https://javenzheng.github.io/mcd-diet-buddy/deck/**
 仓库：https://github.com/JavenZheng/mcd-diet-buddy
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -70,6 +71,7 @@ mcd-diet-buddy/
 ├── web/index.html            # 单文件体验网页（数据内联）
 ├── .github/workflows/deploy.yml   # GitHub Pages 自动部署
 ├── CNAME.example             # 自定义域名说明（DNS 配好先改名 CNAME）
+├── deck/index.html              # 路演 Deck（12 页单文件，键盘 ← → 翻页，F 全屏）
 ├── data/nutrition_raw.txt    # 官方营养文本（原始）
 ├── data/nutrition.json       # 解析后（158 条）
 ├── data/menu.json            # 门店完整菜单（123 条）

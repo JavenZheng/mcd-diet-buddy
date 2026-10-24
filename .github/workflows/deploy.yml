@@ -35,8 +35,10 @@ jobs:
 
       - name: Prepare Pages artifact
         run: |
-          mkdir -p _site
+          mkdir -p _site _site/deck
           cp web/index.html _site/index.html
+          # 路演 Deck（单文件，键盘左右键翻页）
+          cp deck/index.html _site/deck/index.html
           # GitHub Pages 默认行 Jekyll；单文件静态页唔需要，加 .nojekyll 避免被改
           touch _site/.nojekyll
           # 有自定义域名先会copy CNAME；冇就唔好建呢个文件（否则会抢咗 github.io 链接）

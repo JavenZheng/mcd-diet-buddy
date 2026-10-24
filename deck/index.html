@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>麦当劳减肥拍档 · 路演 Deck</title>
+<style>
+  :root{
+    --bg:#14110f; --panel:#1e1a17; --line:#332c26;
+    --ink:#f6f1e9; --muted:#a89e90;
+    --red:#e8390f; --red-d:#ff5a2b; --yellow:#ffc72c; --green:#2fbf71; --green-d:#1a9e57;
+    --shadow:0 18px 50px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:clamp(13px,1.05vw,20px)}
+  body{background:#0b0908;color:var(--ink);
+       font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
+       height:100vh;display:flex;align-items:center;justify-content:center;padding:2vh 2vw;overflow:hidden}
+  .stage{position:relative;width:min(1280px,96vw);aspect-ratio:16/9;max-height:96vh}
+  .slide{position:absolute;inset:0;background:var(--bg);border-radius:18px;box-shadow:var(--shadow);
+         padding:4.2rem 4.6rem;display:none;flex-direction:column;overflow:hidden;
+         border:1px solid var(--line)}
+  .slide.on{display:flex;animation:fin .32s ease both}
+  @keyframes fin{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+  .slide.rev{animation:rin .32s ease both}
+  @keyframes rin{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+
+  .kicker{font-size:.82rem;letter-spacing:2px;color:var(--yellow);font-weight:800;margin-bottom:.7rem}
+  h1{font-size:3.4rem;line-height:1.15;letter-spacing:1px}
+  h2{font-size:2.05rem;line-height:1.25;margin-bottom:1.5rem;letter-spacing:.5px}
+  h2 small{display:block;font-size:.95rem;color:var(--muted);font-weight:400;margin-top:.5rem;letter-spacing:0}
+  .lead{font-size:1.5rem;line-height:1.6}
+  .mut{color:var(--muted)}
+  .body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.1rem;min-height:0}
+
+  .cols{display:flex;gap:1.4rem}
+  .col{flex:1}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.25rem 1.35rem}
+  .card h3{font-size:1.15rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+  .card p{font-size:.92rem;color:var(--muted);line-height:1.65}
+  .num{font-size:1.15rem;color:var(--yellow);font-weight:800}
+
+  .pain{display:flex;gap:1.1rem}
+  .pain .card{flex:1;border-left:4px solid var(--red)}
+  .pain .no{font-size:2.2rem;font-weight:900;color:var(--red);line-height:1}
+
+  .vs{display:flex;gap:1.2rem;align-items:stretch}
+  .vsbox{flex:1;border-radius:14px;padding:1.1rem 1.3rem}
+  .vsa{background:#2a1512;border:1px solid #5c2a1e}
+  .vsb{background:#132619;border:1px solid #215c37}
+  .vsbox h4{font-size:1rem;margin-bottom:.6rem;font-weight:800}
+  .vsbox ul{list-style:none;font-size:.88rem;color:var(--muted);line-height:1.85}
+  .vsbox li::before{content:"· ";color:var(--ink)}
+
+  .bar{display:flex;align-items:flex-end;gap:1.6rem;justify-content:center;height:11rem;margin:.5rem 0}
+  .bar .b{width:9rem;text-align:center;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+  .bar .fill{border-radius:12px 12px 0 0;display:flex;align-items:flex-start;justify-content:center;
+             padding-top:.6rem;font-size:2.1rem;font-weight:900;color:#fff}
+  .bar .lb{margin-top:.6rem;font-size:.85rem;color:var(--muted)}
+  .b1 .fill{background:linear-gradient(180deg,#c0392b,#8e2b21);height:86%}
+  .b2 .fill{background:linear-gradient(180deg,var(--green),var(--green-d));height:41%}
+
+  .sw{display:flex;align-items:center;gap:.9rem;padding:.62rem 0;border-top:1px dashed var(--line)}
+  .sw:first-child{border-top:0}
+  .sw .nm{flex:1;font-size:1rem;line-height:1.4}
+  .sw .nm em{display:block;font-style:normal;font-size:.78rem;color:var(--muted);margin-top:.15rem}
+  .lv{font-size:.7rem;font-weight:900;padding:.14rem .42rem;border-radius:5px;flex:none}
+  .lvA{background:#14532d;color:#6ee7a8}
+  .lvB{background:#4a3410;color:#ffc972}
+  .lvC{background:#4a1a17;color:#ff9b8f}
+  .sv{font-weight:900;color:var(--green);flex:none;font-size:1.05rem}
+
+  table{width:100%;border-collapse:collapse;font-size:.86rem}
+  th,td{padding:.36rem .5rem;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  th{color:var(--muted);font-weight:700;font-size:.78rem;letter-spacing:.5px}
+  td.k{font-weight:800}
+  td.sv2{color:var(--green);font-weight:800}
+  tr.z td{color:var(--muted)}
+  tr.z td.sv2{color:var(--muted)}
+
+  .flow{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;font-size:.86rem}
+  .fnode{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:.7rem .9rem;
+         line-height:1.4;min-width:0}
+  .fnode b{display:block;font-size:.92rem}
+  .fnode span{font-size:.76rem;color:var(--muted)}
+  .arrow{color:var(--yellow);font-weight:900}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+
+  ul.li{list-style:none;font-size:1rem;line-height:2}
+  ul.li li{padding-left:1.2rem;position:relative}
+  ul.li li::before{content:"";position:absolute;left:0;top:.85rem;width:.42rem;height:.42rem;
+                   border-radius:50%;background:var(--red)}
+
+  .big{font-size:2.5rem;font-weight:900;letter-spacing:1px}
+  .warn{background:#3a2a10;border:1px solid #6b4d15;border-radius:12px;padding:.85rem 1rem;
+        font-size:.9rem;color:#ffd98a;line-height:1.7}
+  .quote{font-size:1.35rem;line-height:1.75;border-left:4px solid var(--yellow);padding-left:1.1rem}
+
+  .foot{position:absolute;left:4.6rem;right:4.6rem;bottom:1.7rem;display:flex;justify-content:space-between;
+        align-items:center;font-size:.78rem;color:#6f665c}
+  .pg{font-variant-numeric:tabular-nums;letter-spacing:1px}
+
+  .topbar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--line);border-radius:18px 18px 0 0}
+  .topbar i{display:block;height:100%;background:var(--red);border-radius:18px 0 0 0;transition:width .3s}
+
+  .nav{position:fixed;bottom:2.2vh;left:50%;transform:translateX(-50%);display:flex;gap:.5rem;
+       align-items:center;font-size:.8rem;color:#6f665c}
+  .nav button{background:#1e1a17;border:1px solid var(--line);color:var(--ink);border-radius:9px;
+              padding:.35rem .8rem;cursor:pointer;font-size:.85rem}
+  .nav button:hover{border-color:var(--red);color:var(--red)}
+
+  .cover h1{font-size:2.85rem}
+  .cover .ad{font-size:.95rem;color:var(--muted);line-height:1.75;max-width:44rem;margin-top:1rem}
+  .cover .lead{font-size:1.3rem;margin-top:1.5rem}
+  .cover .leadmut{margin-top:.6rem;font-size:.9rem}
+  .cover .badge{display:inline-block;background:var(--yellow);color:#3a2a00;font-size:.8rem;font-weight:800;
+                padding:.28rem .8rem;border-radius:999px;margin-bottom:1.4rem}
+  .cover .url{margin-top:auto;font-size:1.05rem;color:var(--yellow);font-weight:700;letter-spacing:.5px}
+
+  @media print{
+    body{display:block;height:auto;overflow:visible;background:#fff;padding:0}
+    .stage{width:auto;aspect-ratio:auto;max-height:none}
+    .slide{display:flex!important;position:relative;page-break-after:always;border-radius:0;
+           box-shadow:none;height:100vh;animation:none!important}
+    .nav,.topbar{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+  <!-- 1 封面 -->
+  <section class="slide cover on">
+    <div class="topbar"><i style="width:8%"></i></div>
+    <span class="badge">麦当劳程序员创意开发大赛 · WaytoAGI 1024 用餐赛道</span>
+    <h1>麦当劳减肥拍档</h1>
+    <p class="ad">麦当劳减肥拍档正式上线啦！只需要使用「麦当劳减肥拍档」，帮你规划好怎么样吃麦当劳能够符合减肥期间的要求，换一种吃法，就可以食得有营养又健康，快D来试下啦！</p>
+    <div class="body" style="flex:none">
+      <p class="lead">减脂期想食麦当劳，<span style="color:var(--yellow);font-weight:800">唔使戒口，换一种吃法就得</span>。</p>
+      <p class="mut leadmut">（减脂期间吃麦当劳不用忌口，换一种吃法就行）</p>
+    </div>
+    <p class="url">在线体验 → javenzheng.github.io/mcd-diet-buddy</p>
+    <div class="foot"><span>基于麦当劳官方 MCP 开发 · Skill + 单文件网页</span><span class="pg">01 / 12</span></div>
+  </section>
+
+  <!-- 2 痛点 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:16%"></i></div>
+    <div class="kicker">痛点 · PAIN</div>
+    <h2>减脂期想食麦当劳，其实好难<small>不是意志力问题，是信息问题</small></h2>
+    <div class="body">
+      <div class="pain">
+        <div class="card">
+          <div class="no">01</div>
+          <h3>唔知几多卡</h3>
+          <p>官方营养表有 158 条，散落喺各个页面，手机上面睇唔明、计唔到。</p>
+        </div>
+        <div class="card">
+          <div class="no">02</div>
+          <h3>净系识「唔好食」</h3>
+          <p>网上嘅答案一律系戒口、忍住、食沙律。冇人话你知其实可以<span class="num">点食</span>。</p>
+        </div>
+        <div class="card">
+          <div class="no">03</div>
+          <h3>想改造，唔知得唔得</h3>
+          <p>去酱、换无糖、薯条换玉米杯——门店究竟支唔支持？冇人知，只可以自己试。</p>
+        </div>
+      </div>
+      <p class="quote">减脂唔系要你唔食，系要你<span style="color:var(--yellow)">识得点叫</span>。</p>
+    </div>
+    <div class="foot"><span>麦当劳减肥拍档</span><span class="pg">02 / 12</span></div>
+  </section>
+
+  <!-- 3 洞察 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:25%"></i></div>
+    <div class="kicker">洞察 · INSIGHT</div>
+    <h2>同类都喺度做「选什么」，冇人做「怎么吃」</h2>
+    <div class="body">
+      <div class="vs">
+        <div class="vsbox vsa">
+          <h4>市面做法：选边个</h4>
+          <ul>
+            <li>热量查询表</li>
+            <li>红黑榜 / 推荐清单</li>
+            <li>今日食咩推荐餐单</li>
+            <li>……答案全部系「拣 A 唔好拣 B」</li>
+          </ul>
+        </div>
+        <div class="vsbox vsb">
+          <h4>我哋做法：点食佢</h4>
+          <ul>
+            <li>同一个套餐，改一改</li>
+            <li>去酱、去芝士、换无糖、换玉米杯</li>
+            <li>热量可以砍掉一半</li>
+            <li>……答案系「同一餐，换个食法」</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--yellow)">
+        <h3>关键发现：官方早就开放咗改造能力</h3>
+        <p>麦当劳官方 MCP 嘅 <code style="color:var(--ink)">query-meal-detail</code> 会返回
+          <b style="color:var(--ink)">rounds / choices（带 diffPrice 价差）/ modification（去酱、去芝士、去冰…）</b>。
+          即系话——呢啲改造动作系<span class="num">官方支持、官方背书</span>，唔系我哋估。</p>
+      </div>
+    </div>
+    <div class="foot"><span>麦当劳减肥拍档</span><span class="pg">03 / 12</span></div>
+  </section>
+
+  <!-- 4 方案三层 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:33%"></i></div>
+    <div class="kicker">方案 · SOLUTION</div>
+    <h2>三个功能层，覆盖「食乜 / 点食 / 去边食」</h2>
+    <div class="body">
+      <div class="grid3">
+        <div class="card">
+          <h3>🎯 今日食咩</h3>
+          <p>转盘转中嘅主食，引擎自动配齐一日三餐，每餐附热量 + 蛋白 + 改造建议。</p>
+          <p style="margin-top:.6rem"><span class="num">10 个主食 × 3 档预算 = 33 组方案</span></p>
+        </div>
+        <div class="card">
+          <h3>🃏 点食先减肥卡</h3>
+          <p>12 个真实在售官方套餐，一个掣全开改造开关，每个开关标「慳几多卡」，可关可开。</p>
+          <p style="margin-top:.6rem"><span class="num">改前 / 改后热量 + 价钱一次过睇</span></p>
+        </div>
+        <div class="card">
+          <h3>📍 揾门店</h3>
+          <p>4 城 20 间官方门店，逐间用官方菜单 code 比对「呢间店有冇呢个套餐、卖几钱」。</p>
+          <p style="margin-top:.6rem"><span class="num">唔用别店数据顶替</span></p>
+        </div>
+      </div>
+      <p class="mut" style="font-size:.9rem">红黑榜降级为结果页贴士，餐品图鉴降级为页脚「查一查」——用户嚟系要一个答案，唔系要一套工具。</p>
+    </div>
+    <div class="foot"><span>麦当劳减肥拍档</span><span class="pg">04 / 12</span></div>
+  </section>
+
+  <!-- 5 交互做减法 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:41%"></i></div>
+    <div class="kicker">设计 · SIMPLICITY</div>
+    <h2>由「一套工具」缩到「一个答案」</h2>
+    <div class="body">
+      <div class="grid2">
+        <div class="card" style="border-left:4px solid #8e2b21">
+          <h3>改之前：8 个决策点</h3>
+          <p>下拉拣套餐 → 勾选项 → 按掣 → 睇红黑榜 → 再查图鉴……<br>减脂期嘅人冇心机咁样玩。</p>
+        </div>
+        <div class="card" style="border-left:4px solid var(--green)">
+          <h3>而家：2 个决策点</h3>
+          <p>① 转盘一转（转中主食，三餐自动配好）<br>② 一键「帮我减肥」（开关可关，逐个标慳几多卡）</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>点解可以咁快：33 组方案全部预生成</h3>
+        <p>离线查表，唔使实时计算，手机秒出结果；预算 1200 / 1500 / 1800 三档 chip 一键切换。</p>
+      </div>
+      <p class="quote">复杂留畀引擎，简单留畀用户。</p>
+    </div>
+    <div class="foot"><span>麦当劳减肥拍档</span><span class="pg">05 / 12</span></div>
+  </section>
+
+  <!-- 6 核心差异 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:50%"></i></div>
+    <div class="kicker">核心差异 · THE DIFFERENCE</div>
+    <h2>同一份巨无霸三件套，换种食法慳一半卡</h2>
+    <div class="body">
+      <div class="bar">
+        <div class="b b1"><div class="fill">949</div><div class="lb">改前 官方默认搭配</div></div>
+        <div class="b b2"><div class="fill">456</div><div class="lb">改后 三个官方动作</div></div>
+      </div>
+      <div style="text-align:center;font-size:1.5rem;font-weight:900;color:var(--green)">
+        慳 493 kcal　·　降幅 51.9%
+      </div>
+      <div class="card">
+        <p>呢三个动作唔系我哋谂出嚟——全部嚟自官方 MCP 套餐详情入面嘅
+          <b style="color:var(--ink)">choices.diffPrice</b>（换咩、差几钱）同
+          <b style="color:var(--ink)">modification.items</b>（可以去掉咩配料）。</p>
+      </div>
+    </div>
+    <div class="foot"><span>全部数值取自麦当劳官方营养表（A 级）</span><span class="pg">06 / 12</span></div>
+  </section>
+
+  <!-- 7 门面案例 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:58%"></i></div>
+    <div class="kicker">门面案例 · SHOWCASE</div>
+    <h2>巨无霸三件套　949 → 456 kcal<small>改前：巨无霸 513 ＋ 中薯条 289 ＋ 可乐中杯 147</small></h2>
+    <div class="body">
+      <div class="grid2">
+        <div>
+          <div class="sw">
+            <span class="lv lvA">A</span>
+            <div class="nm">中薯条换小杯玉米杯<em>289 kcal → 53 kcal　·　平 ¥0.5</em></div>
+            <span class="sv">−236</span>
+          </div>
+          <div class="sw">
+            <span class="lv lvA">A</span>
+            <div class="nm">可乐中杯换无糖可口可乐中杯<em>147 kcal → 0 kcal　·　唔使加钱</em></div>
+            <span class="sv">−147</span>
+          </div>
+          <div class="sw">
+            <span class="lv lvB">B</span>
+            <div class="nm">去吉士、巨无霸酱<em>官方支持去配料，减几多卡冇官方数 → 估算</em></div>
+            <span class="sv">−110</span>
+          </div>
+          <p style="margin-top:.8rem;font-size:1.05rem">合计慳 <b style="color:var(--green);font-size:1.35rem">493 kcal</b>，
+             价钱仲平咗 <b style="color:var(--green)">¥0.5</b>。</p>
+        </div>
+        <div>
+          <div class="warn">
+            <b>C 级经验贴士（如实标注）</b><br>
+            只食馅唔食包，估算再慳 <b>80–130 kcal</b>。<br>
+            <span class="mut" style="font-size:.82rem">汉堡面包含碳水，去包降热量系经验估算，官方冇呢个数值 —— 所以我哋畀「区间 + 估算」。</span>
+          </div>
+          <p class="mut" style="margin-top:.9rem;font-size:.88rem;line-height:1.7">
+            另有 3 个餐品名喺官方营养表匹配唔到（5块心形薯饼+韩式辣椒黄油风味酱、茉莉奶绿雪冰、马来咖喱风味薄皮肉骨鸡3块）——
+            我哋<span style="color:var(--ink)">如实列出，唔硬套相似名</span>。</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>A＝官方数据　B＝官方动作＋估算热量　C＝经验估算（区间＋估算）</span><span class="pg">07 / 12</span></div>
+  </section>
+
+  <!-- 8 12 套餐实测 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:66%"></i></div>
+    <div class="kicker">实测 · 12 个真实在售套餐</div>
+    <h2>改造引擎全量跑咗一次，数字全部实算</h2>
+    <div class="body">
+      <table>
+        <thead><tr><th>套餐</th><th>改前</th><th>改后</th><th>慳</th><th>降幅</th><th>套餐</th><th>改前</th><th>改后</th><th>慳</th><th>降幅</th></tr></thead>
+        <tbody>
+          <tr><td>麦香鱼套餐</td><td class="k">761</td><td>258</td><td class="sv2">503</td><td>66.1%</td>
+              <td>不素之霸双层牛堡三件套</td><td class="k">929</td><td>506</td><td class="sv2">423</td><td>45.5%</td></tr>
+          <tr><td>巨无霸三件套</td><td class="k">949</td><td>456</td><td class="sv2">493</td><td>51.9%</td>
+              <td>麦辣鸡腿汉堡三件套</td><td class="k">921</td><td>498</td><td class="sv2">423</td><td>45.9%</td></tr>
+          <tr><td>双层吉士汉堡套餐</td><td class="k">865</td><td>387</td><td class="sv2">478</td><td>55.3%</td>
+              <td>麦香鸡套餐</td><td class="k">805</td><td>382</td><td class="sv2">423</td><td>52.5%</td></tr>
+          <tr><td>吉士汉堡包套餐</td><td class="k">730</td><td>312</td><td class="sv2">418</td><td>57.3%</td>
+              <td>巨无霸四件套</td><td class="k">1119</td><td>839</td><td class="sv2">280</td><td>25.0%</td></tr>
+          <tr><td>板烧鸡腿堡三件套</td><td class="k">827</td><td>409</td><td class="sv2">418</td><td>50.5%</td>
+              <td>板烧鸡腿堡四件套</td><td class="k">997</td><td>792</td><td class="sv2">205</td><td>20.6%</td></tr>
+          <tr><td>麦乐鸡经典中套餐</td><td class="k">649</td><td>492</td><td class="sv2">157</td><td>24.2%</td>
+              <td>酥脆无双套餐</td><td class="k">434</td><td>434</td><td class="sv2">0</td><td>0.0%</td></tr>
+        </tbody>
+      </table>
+      <p class="mut" style="font-size:.86rem">
+        酥脆无双套餐慳 0 卡，<span style="color:var(--ink)">唔系漏计</span>——佢系官方「500 大卡线」内嘅套餐，本身已经达标，我哋如实标 0，唔会为咗好睇而硬凑数。
+      </p>
+    </div>
+    <div class="foot"><span>单位 kcal　·　12 个套餐均来自官方 query-meal-detail</span><span class="pg">08 / 12</span></div>
+  </section>
+
+  <!-- 9 每日规划 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:75%"></i></div>
+    <div class="kicker">每日规划 · DAILY PLAN</div>
+    <h2>唔单止计啱卡路里，仲要唔超标、够营养</h2>
+    <div class="body">
+      <div class="grid2">
+        <div class="card">
+          <h3>硬约束（宁可报警，唔静默）</h3>
+          <ul class="li" style="font-size:.92rem;line-height:1.9">
+            <li>全日钠 ≤ 2000 mg，<span style="color:var(--yellow)">超限主动弹提醒</span></li>
+            <li>蛋白质有下限（热量 ÷ 25）</li>
+            <li>高热量小食封杀：派 / 大薯条 / 麦旋风 / 含糖饮料</li>
+            <li>每餐有热量下限（唔会出现「早餐只畀一杯嘢饮」）</li>
+            <li>早餐优先早餐品类</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:1rem">
+            <h3>封杀唔误杀</h3>
+            <p>无糖可乐、玉米杯唔会被封——佢哋系改造动作本身用到嘅嘢。封杀清单会讲明「呢啲我帮你过滤咗」同原因。</p>
+          </div>
+          <div class="warn">
+            <b>如实展示：33 组入面</b><br>
+            10 组触发钠警告、2 组触发蛋白警告。<br>
+            <span class="mut" style="font-size:.82rem">呢啲系真实嘅营养约束，唔系 bug，我哋原样显示唔掩饰。</span>
+          </div>
+        </div>
+      </div>
+      <p class="mut" style="font-size:.88rem">三个目标（均衡 / 高蛋白 / 低钠）跑出嚟结果必须唔同——呢条係自检项，相同即係模型冇分别度。</p>
+    </div>
+    <div class="foot"><span>10 个主食 × 3 档预算（1200 / 1500 / 1800）= 33 组预生成方案</span><span class="pg">09 / 12</span></div>
+  </section>
+
+  <!-- 10 技术实现 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:83%"></i></div>
+    <div class="kicker">技术实现 · HOW</div>
+    <h2>官方 MCP → 引擎 → 单文件网页，全程唔连后端</h2>
+    <div class="body">
+      <div class="flow">
+        <div class="fnode"><b>麦当劳官方 MCP</b><span>list-nutrition-foods<br>query-meal-detail<br>query-nearby-stores / query-meals</span></div>
+        <span class="arrow">→</span>
+        <div class="fnode"><b>归一化匹配层</b><span>全角半角 / 尺寸缺省 / 别名<br>158 条营养 ↔ 123 项菜单</span></div>
+        <span class="arrow">→</span>
+        <div class="fnode"><b>改造引擎 ＋ 规划引擎</b><span>按轮次名识别 主/小食/饮料<br>四件套 4 轮唔会认错</span></div>
+        <span class="arrow">→</span>
+        <div class="fnode"><b>build_site.py</b><span>数据全部内联</span></div>
+        <span class="arrow">→</span>
+        <div class="fnode"><b>单文件 HTML ≈110 KB</b><span>GitHub Pages 自动部署</span></div>
+      </div>
+      <div class="grid3">
+        <div class="card"><h3>唔需要 token</h3><p>官方数据已经落盘喺仓库度，构建只跑标准库；<span class="num">全程冇向用户索取任何凭证</span>。</p></div>
+        <div class="card"><h3>唔连后端</h3><p>数据内联喺一个 HTML 入面，评委点开就用，离线都开得到。</p></div>
+        <div class="card"><h3>主形态系 Skill</h3><p><code>skill/SKILL.md</code> 写清楚点调 MCP、点做 A/B/C 判定，可以畀第个智能体直接复用。</p></div>
+      </div>
+    </div>
+    <div class="foot"><span>开源：MIT　·　仓库 github.com/JavenZheng/mcd-diet-buddy</span><span class="pg">10 / 12</span></div>
+  </section>
+
+  <!-- 11 数据严谨性 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:91%"></i></div>
+    <div class="kicker">数据严谨性 · RIGOUR</div>
+    <h2>涉及健康建议，含糊就係出事</h2>
+    <div class="body">
+      <table style="font-size:.9rem">
+        <thead><tr><th style="width:4rem">级别</th><th style="width:16rem">含义</th><th>本项目做法</th></tr></thead>
+        <tbody>
+          <tr><td><span class="lv lvA">A</span></td><td>官方营养数据 / 官方替换 / 官方特调</td><td style="text-align:left">热量一律以 MCP 官方返回为准，唔用记忆数值</td></tr>
+          <tr><td><span class="lv lvB">B</span></td><td>动作官方支持，热量变化冇官方数</td><td style="text-align:left">补录并注明来源（如「去酱」标估算）</td></tr>
+          <tr><td><span class="lv lvC">C</span></td><td>冇官方数据嘅经验估算</td><td style="text-align:left">必须畀区间并明示「估算」（如「只食馅唔食包 80–130 卡」）</td></tr>
+        </tbody>
+      </table>
+      <div class="grid2">
+        <div class="card" style="border-left:4px solid var(--yellow)">
+          <h3>官方限制，我哋如实讲（唔掩饰）</h3>
+          <p>① 官方唔返回门店经纬度（恒为 0.0）→ 页面距离系相对查询地标，标 <span class="lv lvC">C</span> 级估算。<br>
+             ② 非营业时间 <code>query-meals</code> 会报错（600057）→ 拉唔到菜单嘅店标「未预载菜单」，<span class="num">唔用第间店数据顶替</span>。</p>
+        </div>
+        <div class="card" style="border-left:4px solid var(--yellow)">
+          <h3>匹配唔上就列出，唔硬套</h3>
+          <p>123 项菜单对 158 条官方营养，命中 38、套餐捆绑 62、暂无数据 23。<br>
+             匹配唔上嘅名会<span class="num">原样列出</span>，唔会搵个相似名顶上去当数。</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>营养数据来自麦当劳官方 MCP，仅供参考，实际以门店为准</span><span class="pg">11 / 12</span></div>
+  </section>
+
+  <!-- 12 收尾 -->
+  <section class="slide">
+    <div class="topbar"><i style="width:100%"></i></div>
+    <div class="kicker">收尾 · THANK YOU</div>
+    <h1 style="font-size:2.6rem">换一种吃法，就食得有营养又健康</h1>
+    <div class="body">
+      <p class="big" style="color:var(--yellow)">javenzheng.github.io/mcd-diet-buddy</p>
+      <div class="grid3" style="margin-top:1.2rem">
+        <div class="card"><h3>158</h3><p>官方营养条目（MCP 返回 160，去重后）</p></div>
+        <div class="card"><h3>12 ／ 20</h3><p>真实在售套餐 ／ 4 城官方门店</p></div>
+        <div class="card"><h3>33</h3><p>预生成每日方案（10 主食 × 3 预算）</p></div>
+      </div>
+      <p class="mut" style="font-size:.86rem;line-height:1.8">
+        免责声明：营养数据来自麦当劳官方 MCP，仅供参考，实际以门店为准；减脂与钠摄入请遵医嘱；本项目为参赛作品，与麦当劳官方无隶属关系。<br>
+        参赛声明：全程仅使用麦当劳官方 MCP 提供的公开能力，未向用户索取 token、未存储或使用任何用户 token。
+      </p>
+      <p style="font-size:1rem;color:var(--muted)">源码 / Skill：<span style="color:var(--ink)">github.com/JavenZheng/mcd-diet-buddy</span>　·　MIT 开源</p>
+    </div>
+    <div class="foot"><span>麦当劳减肥拍档 · 路演 Deck</span><span class="pg">12 / 12</span></div>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button id="prev">← 上一页</button>
+  <span id="cnt" style="min-width:5rem;text-align:center">1 / 12</span>
+  <button id="next">下一页 →</button>
+  <span style="margin-left:.6rem">键盘 ← → 翻页　·　F 全屏　·　P 打印</span>
+</div>
+
+<script>
+const slides = [...document.querySelectorAll('.slide')];
+const bars   = [...document.querySelectorAll('.topbar i')];
+const cnt    = document.getElementById('cnt');
+let cur = 0, rev = false;
+
+function show(i){
+  if(i < 0 || i >= slides.length) return;
+  rev = i < cur;
+  slides[cur].classList.remove('on','rev');
+  cur = i;
+  const s = slides[cur];
+  s.classList.add('on');
+  if(rev) s.classList.add('rev');
+  cnt.textContent = (cur+1) + ' / ' + slides.length;
+  bars.forEach((b,k)=>{ b.style.width = (k<=cur ? ((k+1)/slides.length*100) : 0) + '%'; });
+}
+function go(d){ show(Math.min(slides.length-1, Math.max(0, cur+d))); }
+
+document.getElementById('prev').onclick = ()=>go(-1);
+document.getElementById('next').onclick = ()=>go(1);
+
+document.addEventListener('keydown', e=>{
+  const k = e.key;
+  if(k==='ArrowRight'||k==='ArrowDown'||k===' '||k==='PageDown'||k==='Enter'){ e.preventDefault(); go(1); }
+  else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'||k==='Backspace'){ e.preventDefault(); go(-1); }
+  else if(k==='Home'){ e.preventDefault(); show(0); }
+  else if(k==='End'){ e.preventDefault(); show(slides.length-1); }
+  else if(k==='f'||k==='F'){ if(document.fullscreenElement) document.exitFullscreen();
+                             else document.documentElement.requestFullscreen(); }
+  else if(k==='p'||k==='P'){ window.print(); }
+  else if(/^[1-9]$/.test(k)){ const n = +k - 1; if(n < slides.length) show(n); }
+});
+
+// 手机：左右滑动翻页
+let x0 = null;
+document.addEventListener('touchstart', e=>{ x0 = e.touches[0].clientX; }, {passive:true});
+document.addEventListener('touchend', e=>{
+  if(x0 === null) return;
+  const dx = e.changedTouches[0].clientX - x0;
+  if(Math.abs(dx) > 45) go(dx < 0 ? 1 : -1);
+  x0 = null;
+}, {passive:true});
+
+show(0);
+</script>
+</body>
+</html>
